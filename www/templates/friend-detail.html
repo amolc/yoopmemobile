@@ -1,0 +1,42 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="My Profile"><div class="ion-email"></div>
+  <ion-content >
+      <div id="profile-wrapper">
+        <div id="profile" class="row">
+      		<div class="col">
+      			<img ng-src="{{profile.url}}" alt="" />
+      		</div>
+    	  	<div class="col col-75">
+    		  	<h3>{{profile.name}}</h3>
+    		  	
+    		  	<h4>{{profile.description}}</h4>
+    			  <br/>
+    		  <span class"pull-right">{{profile.likes}}</span>
+    		</div>  
+      </div>  
+	</div>  
+  <div id="friend-list" class="row">
+  	<div class="col"><a><img ng-src="./profile-pics/upload.png" alt="" /></a></div>
+  	<div class="col"><a><img ng-src="./profile-pics/p1.jpg" alt="" /></a></div>
+  	<div class="col"><a><img ng-src="./profile-pics/p2.jpg" alt="" /></a></div>  	
+  </div>
+  <div class="row">
+    <h2 id="style">My Style</h2>
+    <h3 id="style">Location</h3>
+    </div>
+    <div class="row">
+       <p id="smile">I love influencing people with my great smile. Love to meet people who can mix and enjoy some great company.</p>
+    </div>
+  
+  <div class="row" id="psocial">
+  	<div class="col first"><a ></a></div>
+		<div class="col second"><a id="facebook"></a></div>
+		<div class="col third"><a id="twitter"></a></div>	
+  </div>
+  </ion-content>
+</ion-view>
