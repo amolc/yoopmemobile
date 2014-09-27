@@ -1,0 +1,17 @@
+<div ng-controller="hassociationCtrl" >
+<ion-view class="bgreen" >
+  <ion-content class="has-header">
+  	<div style="height: 50px;margin-left: 10px;margin-top: 20px; ">
+   		<a href="#/muncipality/{{muncipalty_id}}"><i class="ion-chevron-left  fontsize64"></i></a>
+   	</div>
+    <div class="bartitle">
+      <h1 class="">Bostadsrättsförening</h1>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="assco in hasscoiations" type="item-text-wrap" href="#/login">
+        {{assco.housing_ass_name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+</div>

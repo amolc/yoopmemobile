@@ -1,0 +1,17 @@
+<div ng-controller="MuncipalityCtrl" >
+<ion-view title="" class="bgreen" >
+  <ion-content class="has-header">
+  <div style="height: 50px;margin-left: 10px;margin-top: 20px; ">
+   	<a href="#/states"><i class="ion-chevron-left  fontsize64"></i></a>
+   </div>
+   <div class="bartitle">
+      <h1 class="kommun">Kommmun</h1>
+    </div>
+    <ion-list>
+      <ion-item ng-repeat="munci in muncipalities" type="item-text-wrap" href="#/housingassociation/{{munci.m_id}}">
+        {{munci.m_name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+</div>

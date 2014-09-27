@@ -1,0 +1,29 @@
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <ion-nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+
+<!-- <ion-nav-view name="state"></ion-nav-view> -->
+
+
+<ion-view class="bgreen" >
+<div ng-controller="StateController">
+  <ion-content  >
+    <div style="height: 50px;margin-left: 10px;margin-top: 20px; ">
+    <a href="#/home"><i class="ion-chevron-left  fontsize64"></i></a>
+   </div>
+    <div class="bartitle">
+      <h1 class="states">Län</h1>
+    </div>
+  <ion-list>
+      <ion-item ng-repeat="state in allstates" type="item-text-wrap" href="#/muncipality/{{state.state_id}}">
+          {{state.state_name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  
+  
+</div>
+</ion-view>
+
