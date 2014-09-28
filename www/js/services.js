@@ -26,4 +26,16 @@ angular.module('starter.services', [])
       return friends[friendId];
     }
   }
+})
+
+
+.factory('profile', function($http) {
+  // Might use a resource here that returns a JSON array
+
+  return {
+    get: function(id) {
+      // Simple index lookup
+      return $http.get(baseUrl + 'api/userdetail/'+ id );    
+    }
+  }
 });
