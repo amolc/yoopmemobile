@@ -12,11 +12,22 @@
       			<img ng-src="{{profile.url}}" alt="" />
       		</div>
     	  	<div class="col col-75">
-    		  	<h3 id="user_name">{{profile.user_name}} <img class="editpencil" ng-src="./img/edit_pencil.png" ng-click="showtext('user_name')"></h3>
-            <h3 class="edittext" id="user_name_text"><input ng-blur="updatedata('user_name')" type="text" ng-model="{{profile.user_name}}"></h3>
+    		  	<h3 id="user_name">{{profile.user_name}} 
+
+              <img class="editpencil" ng-src="./img/edit_pencil.png" ng-click="showtext('user_name')"></h3>
+
+            <h3 class="edittext" id="user_name_text"><input ng-blur="updatedata('user_name')" type="text" ng-model="profile.user_name"></h3>
 
     		  	
-    		  	<h4>{{profile.user_description}} <img class="editpencil" ng-src="./img/edit_pencil.png"></h4>
+
+    		  	<h4 id="user_description">
+
+              {{profile.user_description}}
+
+              <img ng-click="showtext('user_description')" class="editpencil" ng-src="./img/edit_pencil.png">
+            </h4>
+
+            <h4 id="user_description_text" class="edittext" id="user_name_text"><input ng-blur="updatedata('user_description')" type="text" ng-model="profile.user_description"></h4>
     			  <br/>
     		  <span class"pull-right">{{likes}}</span>
     		</div>  

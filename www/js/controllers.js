@@ -78,6 +78,15 @@ angular.module('starter.controllers', [])
           $("#"+field).hide();
           $("#"+field+"_text").show();
          };
+
+      $scope.updatedata = function(field){
+
+
+          $("#"+field+"_text").hide();
+           $("#"+field).show();
+
+      };
+
   
   
 })
