@@ -21,7 +21,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
   });
 
 
-  OpenFB.init('102081083230772','http://node.fountaintechies.com:4000/mobile/openfb/oauthcallback.html');
+  OpenFB.init('102081083230772','http://node.fountaintechies.com:4000/mobile/oauthcallback.html');
 
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
