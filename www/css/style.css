@@ -161,7 +161,9 @@ background: url('../img/sprite.png') 344px -349px transparent;
 		max-height: 180px;
 		max-width: 180px;
 		height: auto; overflow: hidden;}
-#friend-list img{ max-width: 100%;  border: 5px solid #dcdcdc; border-radius: 90px; width: 100%;}
+#friend-list img{ max-width: 100%;  border: 5px solid #dcdcdc; border-radius: 90px; width: 100%;border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;}
 .item-avatar > img:first-child {
 	border: 5px solid #c1c1c1;
 	border-radius: 50%;
@@ -182,7 +184,26 @@ border: none !important;
 /* padding: 7px; */
 margin: -2px;}
 
-.edittext{width: 60%;display:none;
+.edittext{display: block;
+border: 2px dotted #ccc;display:none;
 font-size: 19px;
-padding: 5px;}
+padding: 2px;width: 100%;}
+
+.file-upload
+{
+    
+    
+   opacity:0;
+   width: 180px !important;  
+    height: 178px !important;
+}
+
+.uplaodbtn{
+	 background: url('../img/upload.png') no-repeat;
+    
+    
+    width: 180px !important;  
+    height: 178px !important;
+    
+}
 

@@ -114,5 +114,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
+}).directive('fileModel', function ($parse) {
+    return function(scope, element, attrs) {
+
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                    //console.log( element[0].files[0] );
+
+                });
+            });
+        }
+    
 });
 
