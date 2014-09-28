@@ -182,3 +182,7 @@ border: none !important;
 /* padding: 7px; */
 margin: -2px;}
 
+.edittext{width: 60%;display:none;
+font-size: 19px;
+padding: 5px;}
+

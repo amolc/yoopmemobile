@@ -13,8 +13,8 @@
       		</div>
     	  	<div class="col col-75">
     		  	<h3 id="user_name">{{profile.user_name}} <img class="editpencil" ng-src="./img/edit_pencil.png" ng-click="showtext('user_name')"></h3>
-            <!-- <h3 id="user_name_text" style="display:none;"><input ng-blur="updatedata('user_name')" type="text" ng-model="{{profile.user_name}}"></h3> -->
-            <h3 id="user_name_text" style="display:none;"><input ng-blur="updatedata('user_name')" type="text" ></h3>
+            <h3 class="edittext" id="user_name_text"><input ng-blur="updatedata('user_name')" type="text" ng-model="{{profile.user_name}}"></h3>
+
     		  	
     		  	<h4>{{profile.user_description}} <img class="editpencil" ng-src="./img/edit_pencil.png"></h4>
     			  <br/>
