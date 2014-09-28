@@ -1,4 +1,4 @@
-var baseUrl = 'http://localhost:4000/';
+var baseUrl = 'http://node.fountaintechies.com:4000/';
 
 angular.module('starter.controllers', [])
 
@@ -35,10 +35,9 @@ angular.module('starter.controllers', [])
 
 	  };
 
-	  console.log(user);
-     
+	    $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
       $http.post(baseUrl+"api/newsuser", user).success(function(res) {
-        console.log(res);  
+          
       	$rootScope.id = res.data.id;
 
        $location.path("/tab/profile/"+$rootScope.id);
@@ -74,6 +73,11 @@ angular.module('starter.controllers', [])
         console.log(error);
 
       });
+
+      $scope.showtext = function(field){
+          $("#"+field).hide();
+          $("#"+field+"_text").show();
+         };
   
   
 })

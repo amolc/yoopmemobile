@@ -21,7 +21,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
   });
 
 
-  OpenFB.init('102081083230772','http://localhost/amol/yoopmemobile/www/#/login');
+  OpenFB.init('102081083230772');
 
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {

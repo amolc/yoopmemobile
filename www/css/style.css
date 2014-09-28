@@ -177,3 +177,8 @@ background: url('../img/sprite.png') 344px -349px transparent;
 	font-family: 'source_sans_prosemibold';
 	color: #d12d44;}
 
+.editpencil{width: 20px;
+border: none !important;
+/* padding: 7px; */
+margin: -2px;}
+
