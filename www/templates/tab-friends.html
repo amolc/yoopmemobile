@@ -1,5 +1,21 @@
 <ion-view title="Create">
   <ion-content>
+
+  	<div id="profile-wrapper">
+	    <div id="profile" class="row">
+	  		<div class="col">
+	  			<img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+	  		</div>
+		  	<div class="col col-75">
+			  	<h3 class="ng-binding">Kate Winslet</h3>
+			  	
+			  	<h4 class="ng-binding">Beautiful and witty. I love people who can make me smile.</h4>
+				
+			   
+			  </div>  
+	    </div>  
+	</div>
+
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
         {{friend.name}}
