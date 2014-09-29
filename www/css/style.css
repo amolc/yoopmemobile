@@ -233,16 +233,17 @@ padding: 27px 35px 10px 50px;
 .circleinn{
 	border: 8px solid #b7b7b7;
 	border-radius: 50%;
-	width: 125px;
-	height: 125px;
+	width: 110px;
+	height: 110px;
 	background-color: #efefef;}
 .anyone{
 	border: 8px solid #b7b7b7;
 	border-radius: 50%;
-	width: 125px;
-	height: 125px;
+	width: 110px;
+	height: 110px;
 	background-color: #d12d44;
 }
+#men1{margin: 37px 0px 21px 27px;}
 .agegroup{
 	color: #d12d44;
 	font-size: 22px;
@@ -255,7 +256,7 @@ margin-right: 50px;}
 	text-decoration: none;
 color: #d12d44;
 font-size: 22px;
-margin: 43px 0px 21px 21px;
+margin: 38px 0px 21px 13px;
 }
 #any{color: #fff;}
 .topwrap{border-top: 1px solid #cdcdcd;margin-bottom: 15px;	}
