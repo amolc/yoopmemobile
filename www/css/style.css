@@ -221,5 +221,9 @@ padding: 27px 35px 10px 50px;
 #agegroup{
 	color: #d12d44;
 	font-size: 22px;
+	margin-top: 20px;
 	}
+.mainwrapper .item{
+	border: 0px;
+}
 
