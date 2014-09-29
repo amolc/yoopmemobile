@@ -320,3 +320,14 @@ font-size: 22px;}
 #distance{color: #d12d44;
 font-size: 22px;
 margin-top: 20px;}
+
+.user_bio{ display: none;}
+.user_location{ display: none;}
+
+.user_bio input{border: 2px dotted #ccc;
+font-size: 19px;
+padding: 2px;width: 100%;}
+
+.user_location input{border: 2px dotted #ccc;
+font-size: 19px;
+padding: 2px;width: 100%;}

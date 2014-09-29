@@ -1,6 +1,6 @@
-var baseUrl = 'http://node.fountaintechies.com:4000/';
+//var baseUrl = 'http://node.fountaintechies.com:4000/';
 
-//var baseUrl = 'http://localhost:4000/';
+var baseUrl = 'http://localhost:4000/';
 
 angular.module('starter.controllers', [])
 
@@ -124,6 +124,24 @@ angular.module('starter.controllers', [])
           $(".textfieldssocial").hide();
           
           $(".btnssocial").show();
+
+          $scope.updateuser($rootScope.id,$scope.profile);
+
+
+      };
+
+       $scope.showtextstylelocation = function(field){
+        
+          $(".showlocbio").hide();
+          $("."+field).show();
+
+         };
+
+      $scope.updatestylelocation = function(field){
+          
+          $(".showlocbio").show();
+          
+          $("."+field).hide();
 
           $scope.updateuser($rootScope.id,$scope.profile);
 
