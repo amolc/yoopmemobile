@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','openfb'])
 
-.run(function($ionicPlatform) {
+.run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +19,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+
+
+  OpenFB.init('102081083230772','http://node.fountaintechies.com:4000/mobile/oauthcallback.html');
+
+        $ionicPlatform.ready(function () {
+            if (window.StatusBar) {
+                StatusBar.styleDefault();
+            }
+        });
+
+        $rootScope.$on('$stateChangeStart', function(event, toState) {
+            if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
+                $state.go('app.login');
+                event.preventDefault();
+            }
+        });
+
+        $rootScope.$on('OAuthException', function() {
+            $state.go('app.login');
+        });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -33,12 +53,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('landing', {
       url: '/',
       templateUrl: 'templates/tab-home.html',
-      //controller: 'HomeCtrl'      
+      controller: 'DashCtrl'      
     })
 
     .state('login', {
       url: "/login",
-      templateUrl: "templates/login.html"
+      templateUrl: "templates/login.html",
+      controller: 'LoginCtrl'   
     })
 
     // setup an abstract state for the tabs directive
@@ -70,11 +91,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
     .state('tab.profile', {
-      url: '/profile/:friendId',
+      url: '/profile/:id',
       views: {
         'tab-profile': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+          templateUrl: 'templates/user-detail.html',
+          controller: 'UserProfileCtrl'
         }
       }
     })
@@ -93,5 +114,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
+}).directive('fileModel', function ($parse) {
+    return function(scope, element, attrs) {
+
+            var model = $parse(attrs.fileModel);
+            var modelSetter = model.assign;
+            element.bind('change', function(){
+                scope.$apply(function(){
+                    modelSetter(scope, element[0].files[0]);
+                    //console.log( element[0].files[0] );
+
+                });
+            });
+        }
+    
 });
 
