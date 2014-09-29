@@ -1,6 +1,13 @@
 //var baseUrl = 'http://node.fountaintechies.com:4000/';
 
-var baseUrl = 'http://localhost:4000/';
+//var baseUrl = 'http://localhost:4000/';
+ if (document.location.hostname == "localhost"){
+ var base = window.location.origin;
+ var baseUrl = base +":4000/";
+
+} else {
+  var baseUrl = "http://node.fountaintechies.com:4000/"; 
+}
 
 angular.module('starter.controllers', [])
 
