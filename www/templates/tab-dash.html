@@ -13,22 +13,32 @@
 	 </div> 
    <div class="mainwrapper">
       <div>
-       <h3 id="agegroup">Age Group</h3><p id="para">Please select the desired age-group of the people you would like to meet</p>
+       <h3 id="agegroup">Age Group</h3><p id="para">Please select the desired age-group of the people you would like to meet.</p>
       </div> 
       <div class="list">
-         <div class="item range range-positive">
-            <i class="icon ion-ios7-sunny-outline"></i>
-            <input type="range" name="volume" min="0" max="100" value="33">
-            <i class="icon ion-ios7-sunny"></i>
+         <div class="item range range-positive">           
+            <span id="ageleft">18</span> <input type="range" name="volume" min="0" max="100" value="33">
+            <span id="ageright">60</span>
          </div>
      </div>
-     <div class="firsts">
-         <h3 id="agegroup">Would you like to meet</h3>
-            
-         <div class="circle-text">
-           <div>Men</div></div>
-      </div> 
+     <div class="topwrap topwarp1">
+			 <h3  id="agegroup">Would you like to meet</h3>
+		     <div class="wrap">
+				 <ul class="threecircle">
+				 	<li class="circleinn"><a id="men1" href="">Men</a></li>
+				 	<li class="circleinn"><a  href="">Women</a></li>
+				 	<li class="anyone"><a id="any" href="">Anyone</a></li>
+				 </ul>
+		     </div>	 
     </div>  
+
+     <div class="list">
+         <div class="item range range-positive">
+         <i><span id="distance">Distance</span></i>           
+            <span id="kmleft">0km</span> <input type="range" name="volume" min="0" max="100" value="33">
+            <span id="kmright">80km</span>
+         </div>
+     </div>
 
   </ion-content>
 </ion-view>
