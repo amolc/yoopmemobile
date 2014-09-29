@@ -283,3 +283,13 @@ height: 90px;
 background-color: #d12d44;
 }
 .threecircle{margin-bottom: 17px;}
+.threecircle1{margin-bottom: 17px;
+margin-left: 50px;}
+#ageleft{
+	margin: 38px -20px 3px 14px;
+	color: #d12d44;
+	font-size: 22px;
+}
+#ageright{margin: 38px -20px 3px 14px;
+	color: #d12d44;
+	font-size: 22px;}
