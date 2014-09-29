@@ -226,4 +226,59 @@ padding: 27px 35px 10px 50px;
 .mainwrapper .item{
 	border: 0px;
 }
+.agefine{
+	color: #d12d44;
+    font-size: 22px;}
 
+.circleinn{
+	border: 8px solid #b7b7b7;
+	border-radius: 50%;
+	width: 125px;
+	height: 125px;
+	background-color: #efefef;}
+.anyone{
+	border: 8px solid #b7b7b7;
+	border-radius: 50%;
+	width: 125px;
+	height: 125px;
+	background-color: #d12d44;
+}
+.agegroup{
+	color: #d12d44;
+	font-size: 22px;
+	margin-top: 20px;
+	}
+.wrap ul,li {list-style-type: none;
+display: inline-flex;
+margin-right: 50px;}
+.wrap a{
+	text-decoration: none;
+color: #d12d44;
+font-size: 22px;
+margin: 43px 0px 21px 21px;
+}
+#any{color: #fff;}
+.topwrap{border-top: 1px solid #cdcdcd;margin-bottom: 15px;	}
+.topwrap li{text-align: center;}
+.card{box-shadow: none;}
+.circleinns {
+border: 8px solid #b7b7b7;
+border-radius: 50%;
+width: 90px;
+height: 90px;;
+background-color: #979797;
+}
+.wrap1 a{
+	text-decoration: none;
+color: #d12d44;
+font-size: 22px;
+margin: 30px 0px 21px 21px;
+}
+.anyone1{
+	border: 8px solid #b7b7b7;
+border-radius: 50%;
+width: 90px;
+height: 90px;
+background-color: #d12d44;
+}
+.threecircle{margin-bottom: 17px;}
