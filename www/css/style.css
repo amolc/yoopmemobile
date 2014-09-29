@@ -206,4 +206,20 @@ padding: 2px;width: 100%;}
     height: 178px !important;
     
 }
+#profile-event {
+	background: #eeeeee;
+	margin: -10px -10px 0 -10px;
+	padding: 10px 10px 0 10px;
+	border-bottom: 1px solid #979797;}
+#nearby{background: url('../img/rect.png') no-repeat;
+        height: 67px;
+        margin: 10px 0px 0px -1px;}
+#nearby h2{color: #6f6f6f;
+font-size: 21px;
+padding: 27px 35px 10px 50px;
+}
+#agegroup{
+	color: #d12d44;
+	font-size: 22px;
+	}
 

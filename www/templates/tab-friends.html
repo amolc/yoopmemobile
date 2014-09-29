@@ -1,9 +1,35 @@
 <ion-view title="Create">
-  <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
-        {{friend.name}}
-      </ion-item>
-    </ion-list>
+  <ion-content class="padding">
+    <div id="profile-event">
+        <div id="profile" class="row">
+      		<div class="col">
+      			<img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+      		</div>
+    	  	<div class="col col-75">
+    		  	<h3 class="ng-binding">Kate Preferences</h3>    		  	
+    		  	<h4 class="ng-binding">Please set your  event preferences here</h4>    			  
+    		</div>  
+      </div>  
+	 </div> 
+   <div class="mainwrapper">
+      <div>
+       <h3 id="agegroup">Age Group</h3>
+      </div> 
+      <div class="list">
+         <div class="item range range-positive">
+            <i class="icon ion-ios7-sunny-outline"></i>
+            <input type="range" name="volume" min="0" max="100" value="33">
+            <i class="icon ion-ios7-sunny"></i>
+         </div>
+     </div>
+     <div class="firsts">
+         <h3 id="agegroup">Would you like to meet</h3>
+            
+         <div class="circle-text">
+           <div>Men</div></div>
+      </div> 
+    </div>  
+
   </ion-content>
 </ion-view>
+
