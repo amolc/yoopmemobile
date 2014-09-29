@@ -1,13 +1,13 @@
-var baseUrl = 'http://node.fountaintechies.com:4000/';
+//var baseUrl = 'http://node.fountaintechies.com:4000/';
 
-//var baseUrl = 'http://localhost:4000/';
+var baseUrl = 'http://localhost:4000/';
 
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
-	OpenFB.get('/me').success(function (user) {
-           console.log(user);
-        });
+	// OpenFB.get('/me').success(function (user) {
+ //           console.log(user);
+ //        });
 })
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
@@ -22,6 +22,13 @@ angular.module('starter.controllers', [])
                     alert('OpenFB login failed');
                 });
         };
+
+
+    // $scope.getlogin = function(){
+    //   OpenFB.get('/me').success(function (user) {
+    //        console.log(user);
+    //     });
+    // };
     
     $scope.login = function(type){
 	  var user = {
@@ -58,6 +65,8 @@ angular.module('starter.controllers', [])
 
 .controller('UserProfileCtrl', function( $stateParams,$rootScope,$scope, $location, $http, profile) {
 
+
+
 	var user = { };
 
 	$rootScope.id = $stateParams.id;
@@ -65,7 +74,12 @@ angular.module('starter.controllers', [])
   $http.get(baseUrl+"api/userdetail/"+$rootScope.id, user).success(function(res) {
         
       	   console.log(res);
+      if(res.data.user_url == '')
+      {
+        res.data.user_url = './profile-pics/upload.png';
+      }
 		  $scope.profile = res.data;
+      
 		  $scope.likes = 2;
 
       
@@ -189,8 +203,7 @@ angular.module('starter.controllers', [])
             
             var file = element.files[0];
           
-          $("#btnpup").hide();
-          $(".uploadedp").show();
+          
           document.getElementById("imgprofile").src = oFREvent.target.result;
            // var file = $scope.myFile;
             //console.log(file);

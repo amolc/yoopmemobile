@@ -9,12 +9,10 @@
       <div id="profile-wrapper">
         <div id="profile" class="row">
          
-      		<div class="col uploadedp" style="display:none;">
-             
-      			<img  id="imgprofile" ng-src="{{profile.url}}" alt="" />
-      		</div>
+      		
            <form id="btnpup" class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">  
-          <div class="col uplaodbtn" >
+          <div class="col relative" >
+            <img id="imgprofile" ng-src="{{profile.user_url}}" alt="" />
             <input type="file" class="file-upload" file-model="profileFile" id="profileupload" onchange="angular.element(this).scope().uploadprofilepic(this)"  />
           </div>
         </form>
@@ -44,9 +42,10 @@
   <form class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">  
   <div id="friend-list" class="row">
     
-      <div class="col uplaodbtn">
+      <!-- <div class="col relative one-third"> -->
+      <div class="col relative">
          
-          <!-- <img ng-src="./profile-pics/upload.png" alt="" /> -->
+          <img ng-src="./profile-pics/upload.png" alt=""  />
           <input type="file" class="file-upload" file-model="myFile" id="assologo" onchange="angular.element(this).scope().uploadupdatelogo(this)"  />
 </div>
        
@@ -60,7 +59,7 @@
   </form>
 
   <div class="row">
-    <h2 id="style">My Style</h2>
+    <h2 id="style">My Style <img ng-click="showtext('my_style')" class="editpencil" ng-src="./img/edit_pencil.png"></h2>
     <h3 id="style">Location</h3>
     </div>
     <div class="row">
