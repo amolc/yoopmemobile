@@ -1,0 +1,26 @@
+<ion-view title="Events">
+  <ion-content class="">
+    <div id="profile-wrapper">
+        <div id="profile" class="row">
+      		<div class="col">
+      			<img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+      		</div>
+    	  	<div class="col col-75">
+    		  	<h3 class="ng-binding">Events</h3>    		  	
+    		  	<h4 class="ng-binding">Find out some exciting people nearby</h4>
+    			  <br/>
+    		</div>  
+      </div>  
+	</div> 
+	<div class="list">
+	    
+	   <a ng-repeat="event in events" class="item item-avatar" href="javascript:;">
+	      <img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+	      <h2 style="">{{event.event_invite}} with {{event.user_name}} <span style="margin-left:10px;">{{event.event_time}}</span></h2>
+	      <p>0.7 KM</p>
+	    </a>
+	   
+
+</div>
+  </ion-content>
+</ion-view>

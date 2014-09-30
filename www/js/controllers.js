@@ -271,7 +271,60 @@ angular.module('starter.controllers', [])
   $scope.profile = Friends.get($stateParams.friendId);
 })
 
-.controller('CreateCtrl', function($scope) {
+.controller('CreateEventCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
+  //$scope.event = '';
+  $scope.newevent = function(event){
+
+    if(!event)
+    {
+      alert('Please fill the form first');
+      return;
+    }
+    //console.log(event);
+    event.user_id = 1;
+    event.event_no_of_people = $("#gender").val();
+    event.event_invite = $("#invitepeoplevalue").val();
+    event.event_place = $("#event_place").val();
+    event.event_age = '';
+    event.event_meet = 'men';
+    event.event_friends = '0';
+    event.event_personal = '0';
+
+    var data = event;
+
+      $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+      $http.post(baseUrl+"api/newevent", data).success(function(res) {
+          
+        $rootScope.id = res.data.id;
+
+        $location.path("/tab/account");
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+   }; // event sope
 })
-.controller('AccountCtrl', function($scope) {
+.controller('EventsCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
+      $scope.events = '';
+      var data = {
+        "user_id" : 1
+      };
+
+      $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+      $http.post(baseUrl+"api/allevents", data).success(function(res) {
+          
+        //console.log(res);
+        $scope.events = res;
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
+})
+.controller('CreateCtrl', function($scope) {
 });
+
