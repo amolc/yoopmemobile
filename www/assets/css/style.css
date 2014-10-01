@@ -53,11 +53,19 @@ body {
 }
 .Scale1Text {
 	float: left;
-	margin-top: 4%;
+	margin-top: 0px;
 }
 .Scale2Text {
 	float: right;
-	margin-top: 4%;
+	margin-top: 0px;
+}
+.Scale1singleText {
+	float: left;
+	margin-top: 5px;
+}
+.Scalesingle2Text {
+	float: right;
+	margin-top: 5px;
 }
 .GenderMain {
 	width: 80%;
@@ -109,6 +117,9 @@ body {
 .InviteFriends h2 {
 	font: 'source_sans_prosemibold';
 	color: #d12d44;
+    float: left;
+    text-align: left;
+    width: 100%;
 }
 /*-------- --------*/
 
@@ -241,8 +252,64 @@ body {
 	padding-left:2%;
 	padding-top:2%;
 }
+.distance{
+	float:left;
+	width:25%;
+}
+#distance_scale {
+    float: right;
+    position: relative;
+    width: 60% !important;
+	margin-top: 2% !important;
+}
+#distance_scale .bar{
+	background:#d12d44 !important;
+	
+}
 
 
 
+.padding {
+	padding: 0px !important;
+}
+#MainWrapper {
+	float: left;
+	margin-top: 10px;
+	width: 100%;
+}
+#ng-binding{
+	font-size:25px;
+}
 
-
+@media screen and (min-width: 315px) and (max-width: 354px) {
+#ng-binding {
+    font-size: 25px !important;
+}	
+}
+@media screen and (min-width: 355px) and (max-width: 450px) {
+#ng-binding {
+    font-size: 25px !important;
+    margin-top: 12px !important;
+}
+h2 {
+    font-size: 18px !important;
+}	
+}
+@media screen and (min-width: 475px) and (max-width: 630px) {
+#ng-binding {
+    font-size: 25px !important;
+    margin-top: 22px !important;
+}
+h2 {
+    font-size: 19px !important;
+}	
+}
+@media screen and (min-width: 635px) and (max-width: 1025px) {
+#ng-binding {
+    font-size: 28px !important;
+    margin-top: 28px !important;
+}
+h2 {
+    font-size: 21px !important;
+}
+}

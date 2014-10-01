@@ -16,6 +16,16 @@ angular.module('starter.controllers', [])
 	// OpenFB.get('/me').success(function (user) {
  //           console.log(user);
  //        });
+ $scope.position = {
+    name: 'age group',
+    minAge: 20,
+    maxAge: 40
+  };
+
+  $scope.distance = {
+    cost: 30
+  };
+  $scope.currencyFormatting = function(value) { return value.toString(); };
 })
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
@@ -333,5 +343,12 @@ angular.module('starter.controllers', [])
 .controller('CreateEventPreferencesCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
 
   $(".wasim").hide();
+   $scope.position = {
+    name: 'age group',
+    minAge: 25,
+    maxAge: 40
+  };
 });
+
+
 
