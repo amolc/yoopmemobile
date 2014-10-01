@@ -8,23 +8,124 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
     <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
+    <!--<script src="cordova.js"></script>-->
     <!-- your app's js -->
+    <link rel="stylesheet" href="assets/css/angular-slider.css">
+    
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script src="js/openfb-angular.js"></script>
-
+    
+    <script src="assets/js/angular-slider.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/angular-slider.css">
+     
+    
+<!-- CSS LINKS -->
+<!-- JS Functions -->
+<script type="text/javascript">
+function showGenderpref(data){
+  if(data=='0'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#mengrey').show();
+    $('#womengrey').show();
+    $('#anyonecolour').show();
+    $('#gendervalue').val('all');
+    $('#gender').val('0');
+  }else if(data=='1'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#womengrey').show();
+    $('#mencolour').show();
+    $('#gendervalue').val('men');
+    $('#gender').val('1');
+  }else if(data=='2'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#mengrey').show();
+    $('#womencolour').show();
+    $('#gendervalue').val('women');
+    $('#gender').val('2');
+  }
+}
+function showinvitefriend(data){
+  if(data=='0'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#yesinvitefriendcolour').show();
+    $('#noinvitefriendgrey').show();
+    $('#invitefriendvalue').val('yes');
+    $('#invitefriend').val('0');
+  }else if(data=='1'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#noinvitefriendcolour').show();
+    $('#yesinvitefriendgrey').show();
+    $('#invitefriendvalue').val('no');
+    $('#invitefriend').val('1');
+  }
+}
+function showpersonalinvite(data){
+  if(data=='0'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#yespersonalinvitecolour').show();
+    $('#nopersonalinvitegrey').show();
+    $('#personalinvitevalue').val('yes');
+    $('#personalinvite').val('0');
+  }else if(data=='1'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#nopersonalinvitecolour').show();
+    $('#yespersonalinvitegrey').show();
+    $('#personalinvitevalue').val('no');
+    $('#personalinvite').val('1');
+  }
+}
+</script>
+
+<style>
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  background: none repeat scroll 0 0 #d12d44 !important;
+  border: 1px solid #8f8f8f !important;
+  border-radius: 25px !important;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  margin-left: -0.6em !important;
+  top: -0.65em !important;
+}
+.ui-slider-horizontal {
+  height: 0 !important;
+}
+.ui-slider {
+  margin: 0 auto !important;
+  position: relative !important;
+  text-align: left !important;
+  width: 80% !important;
+}
+/*hr {
+  background: none repeat scroll 0 0 #000 !important;
+  border: none !important;
+  color: #000 !important;
+}*/
+</style>
   </head>
   <body ng-app="starter" animation="slide-left-right-ios7">
     <!-- 

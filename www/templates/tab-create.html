@@ -1,5 +1,106 @@
-<ion-view title="Create">
-  <ion-content class="padding">
-    <h1>Create</h1>
+<ion-view title="Create" ng-controller="CreateEventCtrl">
+  <ion-content>
+
+  	<div id="profile-wrapper">
+	    <div id="profile" class="row">
+	  		<div class="col">
+	  			<img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+	  		</div>
+		  	<div class="col col-75">
+			  	<h3 class="ng-binding">Create Event</h3>			  	
+			  	<h4 class="ng-binding">Please create a new event</h4>		   
+			  </div>  
+	    </div>  
+	</div> 
+<div id="MainWrapper">
+  <div class="CreateEventMain">
+
+     <div class="SetEventTimeMain">
+      <div class="SetEventTimeText"> Event Name </div>
+      <div class="SetEventTime">
+       
+        <input type="text" name="eventname" ng-model="event.event_name" style="border: 2px dotted #ccc; font-size:14px;">
+      </div>
+    </div>
+    <div class="clear"></div>
+    <hr />
+
+    <div class="SetEventTimeMain">
+      <div class="SetEventTimeText"> Set Event Time </div>
+      <div class="SetEventTime">
+        <!-- <div class="Hours">
+          <p style="">1</p>
+          <p style="">4</p>
+        </div>
+        <div class="Minutes">
+          <p style="">0</p>
+          <p style="">0</p>
+        </div> -->
+        <input type="time" name="eventtime" ng-model="event.event_time" style="border: 2px dotted #ccc;">
+      </div>
+    </div>
+    <div class="clear"></div>
+    <hr />
+    <div class="GenderMain">
+      <h2> How many people can join the event </h2>
+      <div class="Gender"> 
+        <!--All=0, men=1, womn=2   -->
+        <input type="hidden" id="gender" class="gender" name="gender" value="3"/>
+        <input type="hidden" id="gendervalue" class="gendervalue" name="gendervalue" value="all"/>
+        <div class="GenderMen"> 
+        	<a href="javascript:;" id="mengrey" onclick="showGender(1);" class="gendergrey"> <img src="img/OneBtn.png" /> </a>
+            <a href="javascript:;" id="mencolour" onclick="showGender(1);" class="gendercolour" style="display:none;"> <img src="img/OneBtnSel.png" /> </a> </div>
+        <div class="GenderWomen">
+        	<a href="javascript:;" id="womengrey" onclick="showGender(2);" class="gendergrey"> <img src="img/TwoBtn.png" /> </a>
+            <a href="javascript:;" id="womencolour" onclick="showGender(2);" class="gendercolour" style="display:none;"> <img src="img/TwoBtnSel.png" /> </a> </div>
+        <div class="GenderAnyone">
+        	<a href="javascript:;" id="anyonegrey" onclick="showGender(3);" class="gendergrey"  style="display:none;"> <img src="img/ThreeBtn.png" /> </a>
+            <a href="javascript:;" id="anyonecolour" onclick="showGender(3);" class="gendercolour"> <img src="img/ThreeBtnSel.png" /> </a> </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <hr />
+    <div class="InvitePeopleMain">
+      <h2> Invite people for </h2>
+      <div class="Gender"> 
+        <!--All=0, men=1, womn=2   -->
+        <input type="hidden" id="invitepeople" class="invitepeople" name="invitepeople" value="0"/>
+        <input type="hidden" id="invitepeoplevalue" class="invitepeoplevalue" name="invitepeoplevalue" value="dinner"/>
+
+        <div class="GenderMen"> 
+        	<a href="javascript:;" id="coffeegrey" onclick="showPeople(0);" class="coffeegrey"> <img src="img/CoffeeBtn.png" /> </a>
+            <a href="javascript:;" id="coffeecolour" onclick="showPeople(0);" class="coffeecolour" style="display:none;"> <img src="img/CoffeeBtnSel.png" /> </a> 
+        </div>
+
+        <div class="GenderWomen">
+        	<a href="javascript:;" id="lunchgrey" onclick="showPeople(1);" class="lunchgrey"> <img src="img/LunchBtn.png" /> </a>
+            <a href="javascript:;" id="lunchcolour" onclick="showPeople(1);" class="lunchcolour" style="display:none;"> <img src="img/LunchBtnSel.png" /> </a> 
+        </div>
+
+        <div class="GenderAnyone">
+        	<a href="javascript:;" id="dinnergrey" onclick="showPeople(2);" class="dinnergrey"  style="display:none;"> <img src="img/DinnerBtn.png" /> </a>
+            <a href="javascript:;" id="dinnercolour" onclick="showPeople(2);" class="dinnercolour"> <img src="img/DinnerBtnSel.png" /> </a> 
+        </div>
+
+      </div>
+    </div>
+    <div class="clear"></div>
+    <hr />
+    <div class="SelectPlaceMain">
+      <h2> Select a place </h2>
+      <input type="hidden" id="event_place" value="1234,4523423">
+      <div class="ChopeIcon"> <a href="#"> <img src="img/ChopeIcon.png" /> </a> </div>
+      <div class="GmapIcon"> <a href="#"> <img src="img/GmapIcon.png" /> </a> </div>
+      <div class="Gmap"> <a href="#"> <img src="img/Gmap.png" /> </a> </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div style="text-align:center;">
+     <img ng-click="newevent(event)" style="width:50%; margin:45px 0 0 0;" src="img/event-next.png">
+</div>
+<div class="clear"></div>
+
   </ion-content>
 </ion-view>

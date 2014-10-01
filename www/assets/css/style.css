@@ -1,0 +1,315 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+body {
+}
+#MainWrapper {
+}
+.CreateEventMain {
+	width: 100%;
+	margin: 0 auto;
+}
+.AgeGroup {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 85px;
+}
+.AgeGroup h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+}
+.AgeScale {
+	width: 85%;
+	float: right;
+	position: relative;
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+}
+.AgeScale hr {
+	border: 1px solid #8f8f8f;
+	margin-top: 10%;
+}
+.Scale1 {
+	background: #d12d44;
+	width: 22px;
+	border-radius: 20px;
+	border: 1px solid #8f8f8f;
+	height: 22px;
+	position: absolute;
+	left: 45%;
+	top: 11px;
+}
+.Scale2 {
+	background: #d12d44;
+	width: 22px;
+	border-radius: 20px;
+	border: 1px solid #8f8f8f;
+	height: 22px;
+	position: absolute;
+	left: 70%;
+	top: 11px;
+}
+.Scale1Text {
+	float: left;
+	margin-top: 0px;
+}
+.Scale2Text {
+	float: right;
+	margin-top: 0px;
+}
+.Scale1singleText {
+	float: left;
+	margin-top: 5px;
+}
+.Scalesingle2Text {
+	float: right;
+	margin-top: 5px;
+}
+.GenderMain {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 85px;
+	margin-top: 3%;
+}
+.GenderMain h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+}
+.Gender {
+	width: 70%;
+	float: left;
+	margin-top: 4%;
+}
+.GenderMen {
+	width: 29%;
+	float: left;
+}
+.GenderMen img {
+	width: 100%;
+	background-size: 100% 100%;
+}
+.GenderWomen {
+	width: 29%;
+	float: left;
+	margin-left: 5%;
+}
+.GenderWomen img {
+	width: 100%;
+	background-size: 100% 100%;
+}
+.GenderAnyone {
+	width: 29%;
+	float: left;
+	margin-left: 5%;
+}
+.GenderAnyone img {
+	width: 100%;
+	background-size: 100% 100%;
+}
+.InviteFriends {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 85px;
+	margin-top: 3%;
+}
+.InviteFriends h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+    float: left;
+    text-align: left;
+    width: 100%;
+}
+/*-------- --------*/
+
+.SetEventTimeMain {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 50px;
+}
+.SetEventTimeText {
+	float: left;
+	width: 60%;
+	font: 14px/1 'source_sans_prosemibold';
+	color: #d12d44;
+	margin-top: 5%;
+}
+.SetEventTime {
+	float: left;
+	width: 40%;
+	margin-top: 5%;
+}
+.Hours {
+	border: 1px solid #979797;
+	width: 40%;
+	float: left;
+}
+.Hours p {
+	float: left;
+	font: 14px/1 'source_sans_prosemibold';
+	color: #d12d44;
+	padding: 5% 8% 5% 17%;
+	text-align: center;
+}
+.Minutes {
+	border: 1px solid #979797;
+	width: 40%;
+	float: left;
+	margin-left: 10%;
+}
+.Minutes p {
+	float: left;
+	font: 14px/1 'source_sans_prosemibold';
+	color: #d12d44;
+	padding: 5% 8% 5% 17%;
+}
+.InvitePeopleMain {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 85px;
+	margin-top: 3%;
+}
+.InvitePeopleMain h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+	width: 40%;
+}
+.ChopeIcon {
+	width: 18%;
+	margin-top: 5%;
+	float: left;
+}
+.ChopeIcon img {
+	background-size: 100% 100%;
+	width: 100%;
+}
+.GmapIcon {
+	width: 18%;
+	margin-top: 5%;
+	margin-left: 5%;
+	float: left;
+}
+.GmapIcon img {
+	background-size: 100% 100%;
+	width: 100%;
+}
+.Gmap {
+	width: 54%;
+	margin-left: 5%;
+	float: left;
+	margin-top: -2%;
+}
+.Gmap img {
+	background-size: 100% 100%;
+	width: 100%;
+}
+.SelectPlaceMain {
+	width: 80%;
+	margin: 0 auto;
+	min-height: 85px;
+	margin-top: 3%;
+}
+.SelectPlaceMain h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+	width: 40%;
+}
+
+/*------------ ------*/
+
+.EventDetailMain {
+	width: 100%;
+	margin: 0 auto;
+	min-height: 160px;
+}
+.EventDetailMain h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+	margin-left:5%;
+}
+.MessagePartnerMain {
+	width: 100%;
+	margin: 0 auto;
+	min-height: 130px;
+	margin-top:5%;
+}
+.MessagePartnerMain h2 {
+	font: 'source_sans_prosemibold';
+	color: #d12d44;
+	margin-left:5%;
+}
+.MessagePartner {
+	width:85%;
+	margin:0 auto;
+}
+.MessagePartner textarea {
+	border:1px solid #979797;
+	resize:none;
+	width:98%;
+	min-height:70px;
+	margin-top:5%;
+	padding-left:2%;
+	padding-top:2%;
+}
+.distance{
+	float:left;
+	width:25%;
+}
+#distance_scale {
+    float: right;
+    position: relative;
+    width: 60% !important;
+	margin-top: 2% !important;
+}
+#distance_scale .bar{
+	background:#d12d44 !important;
+	
+}
+
+
+
+.padding {
+	padding: 0px !important;
+}
+#MainWrapper {
+	float: left;
+	margin-top: 10px;
+	width: 100%;
+}
+#ng-binding{
+	font-size:25px;
+}
+
+@media screen and (min-width: 315px) and (max-width: 354px) {
+#ng-binding {
+    font-size: 25px !important;
+}	
+}
+@media screen and (min-width: 355px) and (max-width: 450px) {
+#ng-binding {
+    font-size: 25px !important;
+    margin-top: 12px !important;
+}
+h2 {
+    font-size: 18px !important;
+}	
+}
+@media screen and (min-width: 475px) and (max-width: 630px) {
+#ng-binding {
+    font-size: 25px !important;
+    margin-top: 22px !important;
+}
+h2 {
+    font-size: 19px !important;
+}	
+}
+@media screen and (min-width: 635px) and (max-width: 1025px) {
+#ng-binding {
+    font-size: 28px !important;
+    margin-top: 28px !important;
+}
+h2 {
+    font-size: 21px !important;
+}
+}

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','openfb'])
+angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.services','openfb'])
 
 .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
   $ionicPlatform.ready(function() {
@@ -90,6 +90,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
         }
       }
     })
+    .state('tab.create', {
+      url: '/create',
+      views: {
+        'tab-create': {
+          templateUrl: 'templates/tab-create.html',
+          controller: 'CreateEventCtrl'
+        }
+      }
+    })
+
+    .state('tab.eventpreferences', {
+      url: '/eventpreferences',
+      views: {
+        'tab-eventpreferences': {
+          templateUrl: 'templates/tab-eventpreferences.html',
+          controller: 'CreateEventPreferencesCtrl'
+        }
+      }
+    })
+  
+    // .state('eventpreferences', {
+    //   url: '/eventpreferences',
+    //   templateUrl: 'templates/tab-eventpreferences.html',
+    //   controller: 'CreateEventPreferencesCtrl'      
+    // })
     .state('tab.profile', {
       url: '/profile/:id',
       views: {
@@ -100,17 +125,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
       }
     })
 
-    .state('tab.account', {
-      url: '/account',
+    .state('tab.events', {
+      url: '/events',
       views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+        'tab-events': {
+          templateUrl: 'templates/tab-events.html',
+          controller: 'EventsCtrl'
         }
       }
     });
     
-
+ // $urlRouterProvider.when('/eventpreferences', {templateUrl: 'templates/tab-eventpreferences.html'});
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
