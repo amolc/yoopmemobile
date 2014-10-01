@@ -99,6 +99,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
         }
       }
     })
+
     .state('tab.eventpreferences', {
       url: '/eventpreferences',
       views: {
@@ -108,6 +109,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
         }
       }
     })
+  
+    // .state('eventpreferences', {
+    //   url: '/eventpreferences',
+    //   templateUrl: 'templates/tab-eventpreferences.html',
+    //   controller: 'CreateEventPreferencesCtrl'      
+    // })
     .state('tab.profile', {
       url: '/profile/:id',
       views: {
@@ -128,7 +135,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
       }
     });
     
-
+ // $urlRouterProvider.when('/eventpreferences', {templateUrl: 'templates/tab-eventpreferences.html'});
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
