@@ -108,6 +108,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','o
           controller: 'AccountCtrl'
         }
       }
+    })
+    .state('tab.eventdetails', {
+      url: '/eventdetails',
+      views: {
+        'tab-eventdetails': {
+          templateUrl: 'templates/tab-event-details.html',
+          //controller: 'AccountCtrl'
+        }
+      }
     });
     
 
