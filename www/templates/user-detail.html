@@ -12,7 +12,9 @@
       		
            <form id="btnpup" class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">  
           <div class="col relative" >
-            <img id="imgprofile" ng-src="{{profile.user_url}}" alt="" />
+            <!-- <img id="imgprofile" ng-src="{{profile.user_url}}" alt="" /> -->
+            <img id="imgprofile" ng-src="./profile-pics/kate.jpg" alt="" />
+            
             <input type="file" class="file-upload" file-model="profileFile" id="profileupload" onchange="angular.element(this).scope().uploadprofilepic(this)"  />
           </div>
         </form>
@@ -59,11 +61,15 @@
   </form>
 
   <div class="row">
-    <h2 id="style">My Style <img ng-click="showtext('my_style')" class="editpencil" ng-src="./img/edit_pencil.png"></h2>
-    <h3 id="style">Location</h3>
+    <h2 id="style">My Style <img ng-click="showtextstylelocation('user_bio')" class="editpencil" ng-src="./img/edit_pencil.png"></h2>
+    <h3 id="style">Location <img ng-click="showtextstylelocation('user_location')" class="editpencil" ng-src="./img/edit_pencil.png"></h3>
     </div>
     <div class="row">
-       <p id="smile">{{profile.user_bio}} , {{profile.user_location}} </p>
+       <p id="smile" class="showlocbio">{{profile.user_bio}} , {{profile.user_location}} </p>
+
+       <p id="smile" class="user_bio"><input ng-blur="updatestylelocation('user_bio')" type="text" ng-model="profile.user_bio"></p>
+
+       <p id="smile" class="user_location"><input ng-blur="updatestylelocation('user_location')" type="text" ng-model="profile.user_location"></p>
     </div>
   
   <div class="row btnssocial" id="psocial">
