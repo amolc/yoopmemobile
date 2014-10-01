@@ -1,44 +1,65 @@
 <ion-view title="Settings">
   <ion-content class="padding">
     <div id="profile-event">
-        <div id="profile" class="row">
-      		<div class="col">
-      			<img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
-      		</div>
-    	  	<div class="col col-75">
-    		  	<h3 class="ng-binding">Kate Preferences</h3>    		  	
-    		  	<h4 class="ng-binding">Please set your Preferences here</h4>    			  
-    		</div>  
-      </div>  
-	 </div> 
-   <div class="mainwrapper">
-      <div>
-       <h3 id="agegroup">Age Group</h3><p id="para">Please select the desired age-group of the people you would like to meet.</p>
-      </div> 
-      <div class="list">
-         <div class="item range range-positive">           
-            <span id="ageleft">18</span> <input type="range" name="volume" min="0" max="100" value="33">
-            <span id="ageright">60</span>
-         </div>
-     </div>
-     <div class="topwrap topwarp1">
-			 <h3  id="agegroup">Would you like to meet</h3>
-		     <div class="wrap">
-				 <ul class="threecircle">
-				 	<li class="circleinn"><a id="men1" href="">Men</a></li>
-				 	<li class="circleinn"><a  href="">Women</a></li>
-				 	<li class="anyone"><a id="any" href="">Anyone</a></li>
-				 </ul>
-		     </div>	 
-    </div>  
-
-     <div class="list">
-         <div class="item range range-positive">
-         <i><span id="distance">Distance</span></i>           
-            <span id="kmleft">0km</span> <input type="range" name="volume" min="0" max="100" value="33">
-            <span id="kmright">80km</span>
-         </div>
-     </div>
-
+      <div id="profile" class="row">
+        <div class="col"> <img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg"> </div>
+        <div class="col col-75">
+          <h3 class="ng-binding" id="ng-binding">Kate Preferences</h3>
+          <h4 class="ng-binding">Please set your Preferences here</h4>
+        </div>
+      </div>
+    </div>
+    <div id="MainWrapper">
+      <div class="CreateEventMain">
+        <div class="AgeGroup">
+          <h2> Age Group </h2>
+          <p>Please select the desired age-group of the people you would like to meet</p>
+          <div class="AgeScale">
+            <div class="demo">
+              <slider floor="10" ceiling="60" ng-model-low="position.minAge" ng-model-high="position.maxAge"></slider>
+              <div class="Scale1Text">&#123;&#123;position.minAge&#125;&#125;</div>
+              <div class="Scale2Text">&#123;&#123;position.maxAge&#125;&#125;</div>
+            </div>
+            <!--<div class="Scale1"></div>
+        <div class="Scale2"></div>
+        <div class="Scale1Text"> 18 </div>
+        <div class="Scale2Text"> 60 </div>--> 
+          </div>
+        </div>
+        <div class="clear"></div>
+        <hr />
+        <div class="GenderMain">
+          <h2> Would you like to meet </h2>
+          <div class="Gender"> 
+            <!--All=0, men=1, womn=2   -->
+            <input type="hidden" id="gender" class="gender" name="gender" value="0"/>
+            <input type="hidden" id="gendervalue" class="gendervalue" name="gendervalue" value="all"/>
+            <div class="GenderMen"> <a href="javascript:;" id="mengrey" onclick="showGenderpref(1);" class="gendergrey"> <img src="img/MenBtn.png" /> </a> <a href="javascript:;" id="mencolour" onclick="showGenderpref(1);" class="gendercolour" style="display:none;"> <img src="img/MenBtnSel.png" /> </a> </div>
+            <div class="GenderWomen"> <a href="javascript:;" id="womengrey" onclick="showGenderpref(2);" class="gendergrey"> <img src="img/WomenBtn.png" /> </a> <a href="javascript:;" id="womencolour" onclick="showGenderpref(2);" class="gendercolour" style="display:none;"> <img src="img/WomenBtnSel.png" /> </a> </div>
+            <div class="GenderAnyone"> <a href="javascript:;" id="anyonegrey" onclick="showGenderpref(0);" class="gendergrey"  style="display:none;"> <img src="img/AnyoneBtn.png" /> </a> <a href="javascript:;" id="anyonecolour" onclick="showGenderpref(0);" class="gendercolour"> <img src="img/AnyoneBtnSel.png" /> </a> </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <hr />
+        <div class="GenderMain">
+          <h2 class="distance"> Distance </h2>
+          <div class="AgeScale" id="distance_scale">
+            <div class="demo">
+              <p style="display:none;">&#123;&#123;distance.cost&#125;&#125;</p>
+              <slider floor="10" ceiling="80" step="1" precision="1" ng-model="distance.cost"></slider>
+            </div>
+            <div class="Scale1singleText price_range" id="minamount">0km</div>
+            <div class="Scalesingle2Text price_range" id="maxamount" >80km</div>
+            <!--<div class="Scale1"></div>
+        <div class="Scale2"></div>
+        <div class="Scale1Text"> 18 </div>
+        <div class="Scale2Text"> 60 </div>--> 
+          </div>
+        </div>
+        <div class="clear"></div>
+        <hr />
+      </div>
+      <div class="clear"></div>
+    </div>
   </ion-content>
 </ion-view>
