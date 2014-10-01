@@ -1,4 +1,5 @@
-<ion-view title="Create" ng-controller="CreateEventCtrl">
+<!-- JS Functions -->
+<ion-view title="Create" ng-controller="CreateEventPreferencesCtrl">
   <ion-content>
 
   	<div id="profile-wrapper">
@@ -14,93 +15,67 @@
 	</div> 
 <div id="MainWrapper">
   <div class="CreateEventMain">
-
-     <div class="SetEventTimeMain">
-      <div class="SetEventTimeText"> Event Name </div>
-      <div class="SetEventTime">
-       
-        <input type="text" name="eventname" ng-model="event.event_name" style="border: 2px dotted #ccc; font-size:14px;">
-      </div>
-    </div>
-    <div class="clear"></div>
-    <hr />
-
-    <div class="SetEventTimeMain">
-      <div class="SetEventTimeText"> Set Event Time </div>
-      <div class="SetEventTime">
-        <!-- <div class="Hours">
-          <p style="">1</p>
-          <p style="">4</p>
+    <div class="AgeGroup">
+      <h2> Age Group </h2>
+      <div class="AgeScale">
+        <div class="demo">
+          <p>
+            <input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+          </p>
+          <div id="slider-range" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all">
+            <div class="ui-slider-range ui-widget-header"></div>
+            <a class="ui-slider-handle ui-state-default ui-corner-all" href="http://jqueryui.com/demos/slider/range.html#"></a><a class="ui-slider-handle ui-state-default ui-corner-all" href="http://jqueryui.com/demos/slider/range.html#"></a></div>
         </div>
-        <div class="Minutes">
-          <p style="">0</p>
-          <p style="">0</p>
-        </div> -->
-        <input type="time" name="eventtime" ng-model="event.event_time" style="border: 2px dotted #ccc;">
+        <div class="Scale1Text price_range" id="minamount"> 18 </div>
+        <div class="Scale2Text price_range" id="maxamount" > 60 </div>
+        <!--<div class="Scale1"></div>
+        <div class="Scale2"></div>
+        <div class="Scale1Text"> 18 </div>
+        <div class="Scale2Text"> 60 </div>--> 
       </div>
     </div>
     <div class="clear"></div>
     <hr />
     <div class="GenderMain">
-      <h2> How many people can join the event </h2>
+      <h2> Would you like to meet </h2>
       <div class="Gender"> 
         <!--All=0, men=1, womn=2   -->
-        <input type="hidden" id="gender" class="gender" name="gender" value="3"/>
+        <input type="hidden" id="gender" class="gender" name="gender" value="0"/>
         <input type="hidden" id="gendervalue" class="gendervalue" name="gendervalue" value="all"/>
-        <div class="GenderMen"> 
-        	<a href="javascript:;" id="mengrey" onclick="showGender(1);" class="gendergrey"> <img src="img/OneBtn.png" /> </a>
-            <a href="javascript:;" id="mencolour" onclick="showGender(1);" class="gendercolour" style="display:none;"> <img src="img/OneBtnSel.png" /> </a> </div>
-        <div class="GenderWomen">
-        	<a href="javascript:;" id="womengrey" onclick="showGender(2);" class="gendergrey"> <img src="img/TwoBtn.png" /> </a>
-            <a href="javascript:;" id="womencolour" onclick="showGender(2);" class="gendercolour" style="display:none;"> <img src="img/TwoBtnSel.png" /> </a> </div>
-        <div class="GenderAnyone">
-        	<a href="javascript:;" id="anyonegrey" onclick="showGender(3);" class="gendergrey"  style="display:none;"> <img src="img/ThreeBtn.png" /> </a>
-            <a href="javascript:;" id="anyonecolour" onclick="showGender(3);" class="gendercolour"> <img src="img/ThreeBtnSel.png" /> </a> </div>
+        <div class="GenderMen"> <a href="javascript:;" id="mengrey" onclick="showGenderpref(1);" class="gendergrey"> <img src="img/MenBtn.png" /> </a> <a href="javascript:;" id="mencolour" onclick="showGenderpref(1);" class="gendercolour" style="display:none;"> <img src="img/MenBtnSel.png" /> </a> </div>
+        <div class="GenderWomen"> <a href="javascript:;" id="womengrey" onclick="showGenderpref(2);" class="gendergrey"> <img src="img/WomenBtn.png" /> </a> <a href="javascript:;" id="womencolour" onclick="showGenderpref(2);" class="gendercolour" style="display:none;"> <img src="img/WomenBtnSel.png" /> </a> </div>
+        <div class="GenderAnyone"> <a href="javascript:;" id="anyonegrey" onclick="showGenderpref(0);" class="gendergrey"  style="display:none;"> <img src="img/AnyoneBtn.png" /> </a> <a href="javascript:;" id="anyonecolour" onclick="showGenderpref(0);" class="gendercolour"> <img src="img/AnyoneBtnSel.png" /> </a> </div>
       </div>
     </div>
     <div class="clear"></div>
     <hr />
-    <div class="InvitePeopleMain">
-      <h2> Invite people for </h2>
+    <div class="InviteFriends">
+      <h2> Would you like to invite any friends </h2>
       <div class="Gender"> 
         <!--All=0, men=1, womn=2   -->
-        <input type="hidden" id="invitepeople" class="invitepeople" name="invitepeople" value="0"/>
-        <input type="hidden" id="invitepeoplevalue" class="invitepeoplevalue" name="invitepeoplevalue" value="dinner"/>
-
-        <div class="GenderMen"> 
-        	<a href="javascript:;" id="coffeegrey" onclick="showPeople(0);" class="coffeegrey"> <img src="img/CoffeeBtn.png" /> </a>
-            <a href="javascript:;" id="coffeecolour" onclick="showPeople(0);" class="coffeecolour" style="display:none;"> <img src="img/CoffeeBtnSel.png" /> </a> 
-        </div>
-
-        <div class="GenderWomen">
-        	<a href="javascript:;" id="lunchgrey" onclick="showPeople(1);" class="lunchgrey"> <img src="img/LunchBtn.png" /> </a>
-            <a href="javascript:;" id="lunchcolour" onclick="showPeople(1);" class="lunchcolour" style="display:none;"> <img src="img/LunchBtnSel.png" /> </a> 
-        </div>
-
-        <div class="GenderAnyone">
-        	<a href="javascript:;" id="dinnergrey" onclick="showPeople(2);" class="dinnergrey"  style="display:none;"> <img src="img/DinnerBtn.png" /> </a>
-            <a href="javascript:;" id="dinnercolour" onclick="showPeople(2);" class="dinnercolour"> <img src="img/DinnerBtnSel.png" /> </a> 
-        </div>
-
+        <input type="hidden" id="invitefriend" class="invitefriend" name="invitefriend" value="0"/>
+        <input type="hidden" id="invitefriendvalue" class="invitefriendvalue" name="invitefriendvalue" value="yes"/>
+        <div class="GenderMen"> <a href="javascript:;" id="yesinvitefriendgrey" onclick="showinvitefriend(0);" class="invitefriendgrey" style="display:none;"> <img src="img/YesBtn.png" /> </a> <a href="javascript:;" id="yesinvitefriendcolour" onclick="showinvitefriend(0);" class="invitefriendcolour" > <img src="img/YesBtnSel.png" /> </a> </div>
+        <div class="GenderWomen"> <a href="javascript:;" id="noinvitefriendgrey" onclick="showinvitefriend(1);" class="invitefriendgrey"> <img src="img/NoBtn.png" /> </a> <a href="javascript:;" id="noinvitefriendcolour" onclick="showinvitefriend(1);" class="invitefriendcolour" style="display:none;"> <img src="img/NoBtnSel.png" /> </a> </div>
+      </div>
+    </div>
+    <div class="InviteFriends">
+      <h2> Would you like to send personal invites </h2>
+      <div class="Gender"> 
+        <!--All=0, men=1, womn=2   -->
+        <input type="hidden" id="personalinvite" class="personalinvite" name="personalinvite" value="0"/>
+        <input type="hidden" id="personalinvitevalue" class="personalinvitevalue" name="personalinvitevalue" value="yes"/>
+        <div class="GenderMen"> <a href="javascript:;" id="yespersonalinvitegrey" onclick="showpersonalinvite(0);" class="personalinvitegrey" style="display:none;"> <img src="img/YesBtn.png" /> </a> <a href="javascript:;" id="yespersonalinvitecolour" onclick="showpersonalinvite(0);" class="personalinvitecolour" > <img src="img/YesBtnSel.png" /> </a> </div>
+        <div class="GenderWomen"> <a href="javascript:;" id="nopersonalinvitegrey" onclick="showpersonalinvite(1);" class="personalinvitegrey"> <img src="img/NoBtn.png" /> </a> <a href="javascript:;" id="nopersonalinvitecolour" onclick="showpersonalinvite(1);" class="personalinvitecolour" style="display:none;"> <img src="img/NoBtnSel.png" /> </a> </div>
       </div>
     </div>
     <div class="clear"></div>
     <hr />
-    <div class="SelectPlaceMain">
-      <h2> Select a place </h2>
-      <input type="hidden" id="event_place" value="1234,4523423">
-      <div class="ChopeIcon"> <a href="#"> <img src="img/ChopeIcon.png" /> </a> </div>
-      <div class="GmapIcon"> <a href="#"> <img src="img/GmapIcon.png" /> </a> </div>
-      <div class="Gmap"> <a href="#"> <img src="img/Gmap.png" /> </a> </div>
-    </div>
   </div>
   <div class="clear"></div>
 </div>
 
-<div style="text-align:center;">
-     <img ng-click="newevent(event)" style="width:50%; margin:45px 0 0 0;" src="img/event-next.png">
-</div>
-<div class="clear"></div>
+
 
   </ion-content>
 </ion-view>

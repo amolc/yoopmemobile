@@ -31,7 +31,148 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <script src="js/script.js"></script>
-
+    <link rel="stylesheet" href="assets/css/custom.css">
+<!-- CSS LINKS -->
+<!-- JS LINKS -->
+<script src="assets/js/jquery-1.7.1.js"></script>
+<script src="assets/js/jquery.ui.core.js"></script>
+<script src="assets/js/jquery.ui.widget.js"></script>
+<script src="assets/js/jquery.ui.mouse.js"></script>
+<script src="assets/js/jquery.ui.slider.js"></script>
+<!-- JS LINKS -->
+<!-- JS Functions -->
+<script type="text/javascript">
+function showGenderpref(data){
+  if(data=='0'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#mengrey').show();
+    $('#womengrey').show();
+    $('#anyonecolour').show();
+    $('#gendervalue').val('all');
+    $('#gender').val('0');
+  }else if(data=='1'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#womengrey').show();
+    $('#mencolour').show();
+    $('#gendervalue').val('men');
+    $('#gender').val('1');
+  }else if(data=='2'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#mengrey').show();
+    $('#womencolour').show();
+    $('#gendervalue').val('women');
+    $('#gender').val('2');
+  }
+}
+function showinvitefriend(data){
+  if(data=='0'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#yesinvitefriendcolour').show();
+    $('#noinvitefriendgrey').show();
+    $('#invitefriendvalue').val('yes');
+    $('#invitefriend').val('0');
+  }else if(data=='1'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#noinvitefriendcolour').show();
+    $('#yesinvitefriendgrey').show();
+    $('#invitefriendvalue').val('no');
+    $('#invitefriend').val('1');
+  }
+}
+function showpersonalinvite(data){
+  if(data=='0'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#yespersonalinvitecolour').show();
+    $('#nopersonalinvitegrey').show();
+    $('#personalinvitevalue').val('yes');
+    $('#personalinvite').val('0');
+  }else if(data=='1'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#nopersonalinvitecolour').show();
+    $('#yespersonalinvitegrey').show();
+    $('#personalinvitevalue').val('no');
+    $('#personalinvite').val('1');
+  }
+}
+</script>
+<script>
+  $(function() {
+    
+    /*************  Initialize Price Range Slider *************/
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 18,
+      max: 60,
+      step: 1, // Use this determine the amount of each interval
+      values: [ 18, 30 ], // The default range
+      slide: function( event, ui ) {
+        $( "#minamount" ).text(ui.values[ 0 ]);
+        $( "#maxamount" ).text(ui.values[ 1 ]);
+        $( "#my_min" ).val(ui.values[ 0 ]); // Display and selected the min Price
+        $( "#my_max" ).val(ui.values[ 1 ]); // Display and selected the max Price
+      }
+    });
+    
+    /*************  Set Initial Value of the Dropdown Box *************/
+    //For dropdown box
+    $( "#my_min" ).val($( "#slider-range" ).slider( "values", 0 ));
+    $( "#my_max" ).val($( "#slider-range" ).slider( "values", 1 ));
+    
+    //For input text box
+    
+    $( "#minamount" ).text($( "#slider-range" ).slider( "values", 0 ));
+    $( "#maxamount" ).text($( "#slider-range" ).slider( "values", 1 ));
+    /************* When user choose from dropdown box directly *************/
+    $("select.price_range").change(function () {
+      $myMinValue = $("#my_min option:selected").val();
+      $myMaxValue = $("#my_max option:selected").val();
+      //Make changes on the slider itself
+      if($myMinValue <= $myMaxValue) {
+        $( "#slider-range" ).slider({
+          values: [$myMinValue, $myMaxValue]              
+        });
+      } else {
+        alert("Invalid Input"); 
+      }
+    });
+    
+  });
+  
+  </script>
+<style>
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+  background: none repeat scroll 0 0 #d12d44 !important;
+  border: 1px solid #8f8f8f !important;
+  border-radius: 25px !important;
+}
+.ui-slider-horizontal .ui-slider-handle {
+  margin-left: -0.6em !important;
+  top: -0.65em !important;
+}
+.ui-slider-horizontal {
+  height: 0 !important;
+}
+.ui-slider {
+  margin: 0 auto !important;
+  position: relative !important;
+  text-align: left !important;
+  width: 80% !important;
+}
+hr {
+  background: none repeat scroll 0 0 #000 !important;
+  border: none !important;
+  color: #000 !important;
+}
+</style>
   </head>
   <body ng-app="starter" animation="slide-left-right-ios7">
     <!-- 
