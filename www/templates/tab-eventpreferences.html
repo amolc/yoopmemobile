@@ -1,6 +1,6 @@
 <!-- JS Functions -->
 
-<ion-view title="Create" ng-controller="CreateEventPreferencesCtrl">
+<ion-view title="Create" id="preferform" ng-controller="CreateEventPreferencesCtrl">
   <ion-content>
     <div id="profile-wrapper">
       <div id="profile" class="row">
@@ -17,9 +17,13 @@
           <h2> Age Group </h2>
           <div class="AgeScale">
             <div class="demo">
-              <slider floor="10" ceiling="60" ng-model-low="position.minAge" ng-model-high="position.maxAge"></slider>
+              <slider floor="10"  ceiling="60" ng-model-low="position.minAge" ng-model-high="position.maxAge"></slider>
               <div class="Scale1Text">&#123;&#123;position.minAge&#125;&#125;</div>
               <div class="Scale2Text">&#123;&#123;position.maxAge&#125;&#125;</div>
+
+              <input type="hidden" onchange="Submitform()" id="first_scale" value="{{position.minAge}}" />
+              <input type="hidden"  onchange="Submitform()" id="second_scale" value="{{position.maxAge}}"/>
+
             </div>
           </div>
         </div>
@@ -30,7 +34,7 @@
           <div class="Gender"> 
             <!--All=0, men=1, womn=2   -->
             <input type="hidden" id="gender" class="gender" name="gender" value="0"/>
-            <input type="hidden" id="gendervalue" class="gendervalue" name="gendervalue" value="all"/>
+            <input type="hidden"  onchange="Submitform()" id="gendervalue" class="gendervalue" name="gendervalue" value="all"/>
             <div class="GenderMen"> <a href="javascript:;" id="mengrey" onclick="showGenderpref(1);" class="gendergrey"> <img src="img/MenBtn.png" /> </a> <a href="javascript:;" id="mencolour" onclick="showGenderpref(1);" class="gendercolour" style="display:none;"> <img src="img/MenBtnSel.png" /> </a> </div>
             <div class="GenderWomen"> <a href="javascript:;" id="womengrey" onclick="showGenderpref(2);" class="gendergrey"> <img src="img/WomenBtn.png" /> </a> <a href="javascript:;" id="womencolour" onclick="showGenderpref(2);" class="gendercolour" style="display:none;"> <img src="img/WomenBtnSel.png" /> </a> </div>
             <div class="GenderAnyone"> <a href="javascript:;" id="anyonegrey" onclick="showGenderpref(0);" class="gendergrey"  style="display:none;"> <img src="img/AnyoneBtn.png" /> </a> <a href="javascript:;" id="anyonecolour" onclick="showGenderpref(0);" class="gendercolour"> <img src="img/AnyoneBtnSel.png" /> </a> </div>
@@ -43,17 +47,17 @@
           <div class="Gender"> 
             <!--All=0, men=1, womn=2   -->
             <input type="hidden" id="invitefriend" class="invitefriend" name="invitefriend" value="0"/>
-            <input type="hidden" id="invitefriendvalue" class="invitefriendvalue" name="invitefriendvalue" value="yes"/>
+            <input type="hidden"  onchange="Submitform()" id="invitefriendvalue" class="invitefriendvalue" name="invitefriendvalue" value="yes"/>
             <div class="GenderMen"> <a href="javascript:;" id="yesinvitefriendgrey" onclick="showinvitefriend(0);" class="invitefriendgrey" style="display:none;"> <img src="img/YesBtn.png" /> </a> <a href="javascript:;" id="yesinvitefriendcolour" onclick="showinvitefriend(0);" class="invitefriendcolour" > <img src="img/YesBtnSel.png" /> </a> </div>
             <div class="GenderWomen"> <a href="javascript:;" id="noinvitefriendgrey" onclick="showinvitefriend(1);" class="invitefriendgrey"> <img src="img/NoBtn.png" /> </a> <a href="javascript:;" id="noinvitefriendcolour" onclick="showinvitefriend(1);" class="invitefriendcolour" style="display:none;"> <img src="img/NoBtnSel.png" /> </a> </div>
           </div>
         </div>
         <div class="InviteFriends">
-          <h2> Would you like to send personal invites </h2>
+          <h2 > Would you like to send personal invites </h2>
           <div class="Gender"> 
             <!--All=0, men=1, womn=2   -->
             <input type="hidden" id="personalinvite" class="personalinvite" name="personalinvite" value="0"/>
-            <input type="hidden" id="personalinvitevalue" class="personalinvitevalue" name="personalinvitevalue" value="yes"/>
+            <input type="hidden"  id="personalinvitevalue" class="personalinvitevalue" name="personalinvitevalue" value="yes"/>
             <div class="GenderMen"> <a href="javascript:;" id="yespersonalinvitegrey" onclick="showpersonalinvite(0);" class="personalinvitegrey" style="display:none;"> <img src="img/YesBtn.png" /> </a> <a href="javascript:;" id="yespersonalinvitecolour" onclick="showpersonalinvite(0);" class="personalinvitecolour" > <img src="img/YesBtnSel.png" /> </a> </div>
             <div class="GenderWomen"> <a href="javascript:;" id="nopersonalinvitegrey" onclick="showpersonalinvite(1);" class="personalinvitegrey"> <img src="img/NoBtn.png" /> </a> <a href="javascript:;" id="nopersonalinvitecolour" onclick="showpersonalinvite(1);" class="personalinvitecolour" style="display:none;"> <img src="img/NoBtnSel.png" /> </a> </div>
           </div>
@@ -108,4 +112,9 @@
     
 //   });
   
+//     $(function() {
+//     setInterval(function(){
+//       Submitform();
+//     }, 500);
+// });
   </script>
