@@ -206,7 +206,7 @@ height: 100%;
 left: 0;
 top: 0;
 }
-.relative{position:relative;}
+.relative{position:relative; overflow: hidden;}
 /*.one-third{width: 33.33%;float: left;}*/
 .uplaodbtn{
 	 background: url('../img/upload.png') no-repeat;
