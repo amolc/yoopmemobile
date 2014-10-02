@@ -1,10 +1,6 @@
-//var baseUrl = 'http://node.fountaintechies.com:4000/';
-
-//var baseUrl = 'http://localhost:4000/';
- if (document.location.hostname == "localhost"){
+if (document.location.hostname == "localhost"){
  var base = window.location.origin;
- var baseUrl = base +":4000/";
-
+ var baseUrl = 'http://localhost:4000/';
 } else {
   var baseUrl = "http://node.fountaintechies.com:4000/"; 
 }
@@ -12,7 +8,7 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
-  $(".wasim").hide();
+  
 	// OpenFB.get('/me').success(function (user) {
  //           console.log(user);
  //        });
@@ -93,14 +89,22 @@ angular.module('starter.controllers', [])
 
   $scope.currencyFormatting = function(value) { return value.toString(); };
 })
-.controller('signupCtrl', function( $scope ) {
+.controller('signupCtrl', function( $scope, $http ) {
     $scope.userdetails ={
+      'first_name' : '',
+      'last_name' : '',
       'email' : '',
       'password' : ''
     }
     $scope.signupform = function( userdetails ){
-      console.log( userdetails );
-    };
+      $http.post(baseUrl+"api/newsuser", user).success(function(res) {
+        $rootScope.id = res.data.id;
+        $location.path("/tab/profile/"+$rootScope.id);
+      }).error(function(error) {
+          console.log(error);
+      });
+        
+      };
 })
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
@@ -155,11 +159,7 @@ angular.module('starter.controllers', [])
 
 .controller('UserProfileCtrl', function( $stateParams,$rootScope,$scope, $location, $http, profile) {
 
-  $(".wasim").hide();
-
-
-
-	var user = { };
+  var user = { };
 
 	$rootScope.id = $stateParams.id;
   
@@ -357,7 +357,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('CreateEventCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
-  $(".wasim").hide();
+  
   //$scope.event = '';
   $scope.newevent = function(event){
 
@@ -393,7 +393,7 @@ angular.module('starter.controllers', [])
    }; // event sope
 })
 .controller('EventsCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
-  $(".wasim").hide();
+  
       $scope.events = '';
       var data = {
         "user_id" : 1
@@ -414,7 +414,7 @@ angular.module('starter.controllers', [])
 })
 .controller('CreateEventPreferencesCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
 
-  $(".wasim").hide();
+  
    $scope.position = {
     name: 'age group',
     minAge: 25,

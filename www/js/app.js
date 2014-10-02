@@ -108,7 +108,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     .state('tab.eventpreferences', {
       url: '/eventpreferences',
       views: {
-        'tab-eventpreferences': {
+        'tab-dash': {
           templateUrl: 'templates/tab-eventpreferences.html',
           controller: 'CreateEventPreferencesCtrl'
         }
@@ -133,7 +133,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     .state('tab.eventdetail', {
       url: '/eventdetail/:id',
       views: {
-        'tab-eventdetail': {
+        'tab-events': {
           templateUrl: 'templates/event-detail.html',
           controller: 'EventDetailCtrl'
         }

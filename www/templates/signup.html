@@ -1,19 +1,26 @@
-  <ion-content class="padding" has-header="false" padding="false" >
+<ion-content class="padding" has-header="false" padding="false" >
+
+<form ng-submit="signupform( userdetails )">
     <div class="list">
     <label class="item item-input item-stacked-label">
       <span class="input-label">First Name</span>
-      <input type="text" placeholder="John">
+      <input type="text" placeholder="John" ng-model="userdetails.first_name" />
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Last Name</span>
-      <input type="text" placeholder="Suhr">
+      <input type="text" placeholder="Suhr" ng-model="userdetails.last_name" />
     </label>
     <label class="item item-input item-stacked-label">
       <span class="input-label">Email</span>
-      <input type="text" placeholder="john@yoopme.com">
+      <input type="text" placeholder="john@yoopme.com" ng-model="userdetails.email" />
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="userdetails.password" placeholder="*****" />
     </label>
   </div>
   
-    <button class="button button-block button-positive activated">Submit</button>
-  
-  </ion-content>
+    <button type="submit" class="button button-block button-positive activated">Submit</button>
+</form>
+
+</ion-content>
