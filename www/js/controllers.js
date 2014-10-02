@@ -89,7 +89,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
-
+OpenFB.get('/me').success(function (user) {
+           console.log(user);
+        });
 	$scope.facebookLogin = function () {
 
             OpenFB.login('email,read_stream,publish_stream').then(
