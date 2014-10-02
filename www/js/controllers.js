@@ -93,6 +93,15 @@ angular.module('starter.controllers', [])
 
   $scope.currencyFormatting = function(value) { return value.toString(); };
 })
+.controller('signupCtrl', function( $scope ) {
+    $scope.userdetails ={
+      'email' : '',
+      'password' : ''
+    }
+    $scope.signupform = function( userdetails ){
+      console.log( userdetails );
+    };
+})
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
 
@@ -143,9 +152,6 @@ angular.module('starter.controllers', [])
    }; // login sope
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  //$scope.friends = Friends.all();
-})
 
 .controller('UserProfileCtrl', function( $stateParams,$rootScope,$scope, $location, $http, profile) {
 

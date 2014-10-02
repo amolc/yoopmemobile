@@ -56,6 +56,11 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
       controller: 'DashCtrl'      
     })
 
+    .state('signup', {
+      url: "/signup",
+      templateUrl: "templates/signup.html",
+      controller: 'signupCtrl'   
+    })
     .state('login', {
       url: "/login",
       templateUrl: "templates/login.html",
@@ -86,7 +91,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
       views: {
         'tab-friends': {
           templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+          //controller: 'FriendsCtrl'
         }
       }
     })
