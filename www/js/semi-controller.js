@@ -1,4 +1,4 @@
-angular.controller('signupCtrl', function( $scope, $http  ) {
+function signupCtrl( $scope, $http  ) {
     $scope.userdetails ={
       'first_name' : '',
       'last_name' : '',
@@ -14,4 +14,4 @@ angular.controller('signupCtrl', function( $scope, $http  ) {
       });
         
       };
-});
+}
