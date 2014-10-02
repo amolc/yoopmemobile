@@ -96,7 +96,7 @@ OpenFB.get('/me').success(function (user) {
 
             OpenFB.login('email,read_stream,publish_stream').then(
                 function () {
-                    $location.path('/getuser');
+                    $scope.getlogin();
                 },
                 function () {
                     alert('OpenFB login failed');
@@ -104,11 +104,11 @@ OpenFB.get('/me').success(function (user) {
         };
 
 
-    // $scope.getlogin = function(){
-    //   OpenFB.get('/me').success(function (user) {
-    //        console.log(user);
-    //     });
-    // };
+    $scope.getlogin = function(){
+      OpenFB.get('/me').success(function (user) {
+           console.log(user);
+        });
+    };
     
     $scope.login = function(type){
 	  var user = {
