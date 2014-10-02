@@ -365,7 +365,7 @@ angular.module('starter.controllers', [])
       return;
     }
     //console.log(event);
-    event.user_id = 1;
+    event.user_id = $rootScope.id;
     event.event_no_of_people = $("#gender").val();
     event.event_invite = $("#invitepeoplevalue").val();
     event.event_place = $("#event_place").val();
