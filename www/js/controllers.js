@@ -9,9 +9,7 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   
-	// OpenFB.get('/me').success(function (user) {
- //           console.log(user);
- //        });
+	
   var user = { };
 
   $rootScope.id =$rootScope.id;
@@ -96,7 +94,7 @@ angular.module('starter.controllers', [])
 
             OpenFB.login('email,read_stream,publish_stream').then(
                 function () {
-                    $location.path('/login');
+                    $location.path('/getuser');
                 },
                 function () {
                     alert('OpenFB login failed');
@@ -438,7 +436,11 @@ angular.module('starter.controllers', [])
       $scope.change();
     }, 10000);
 
+})
+.controller('getuserCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
+  
+  OpenFB.get('/me').success(function (user) {
+           console.log(user);
+        });
+
 });
-
-
-

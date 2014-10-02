@@ -60,6 +60,11 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
       templateUrl: "templates/signup.html",
       controller: 'signupCtrl'   
     })
+    .state('getuser', {
+      url: "/getuser",
+      templateUrl: "templates/getuser.html",
+      controller: 'getuserCtrl'   
+    })
     .state('login', {
       url: "/login",
       templateUrl: "templates/login.html",
