@@ -109,7 +109,7 @@ OpenFB.get('/me').success(function (user) {
            console.log(user);
         });
     };
-    
+    h
     $scope.login = function(type){
 	  var user = {
        "user_media_id" : "1234567",
