@@ -21,7 +21,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
   });
 
 
-  OpenFB.init('102081083230772','');
+  OpenFB.init('102081083230772','http://node.fountaintechies.com:4000/mobile/#/getuser');
 
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
