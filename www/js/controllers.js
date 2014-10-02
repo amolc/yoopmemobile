@@ -89,14 +89,12 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
-OpenFB.get('/me').success(function (user) {
-           console.log(user);
-        });
+
 	$scope.facebookLogin = function () {
 
             OpenFB.login('email,read_stream,publish_stream').then(
                 function () {
-                    $scope.getlogin();
+                    $scope.getfblogin();
                 },
                 function () {
                     alert('OpenFB login failed');
@@ -104,11 +102,28 @@ OpenFB.get('/me').success(function (user) {
         };
 
 
-    $scope.getlogin = function(){
+    $scope.getfblogin = function(){
       OpenFB.get('/me').success(function (user) {
-           console.log(user);
+           $scope.fblogin(user);
         });
     };
+
+
+    $scope.fblogin = function(user){
+   
+      $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+      $http.post(baseUrl+"api/newfbuser", user).success(function(res) {
+          
+        $rootScope.id = res.data.id;
+
+       $location.path("/tab/profile/"+$rootScope.id);
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+   }; // fb login sope
     
     $scope.login = function(type){
 	  var user = {
