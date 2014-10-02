@@ -11,20 +11,86 @@
 
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
+.controller('DashCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   $(".wasim").hide();
 	// OpenFB.get('/me').success(function (user) {
  //           console.log(user);
  //        });
- $scope.position = {
-    name: 'age group',
-    minAge: 20,
-    maxAge: 40
-  };
+  var user = { };
 
-  $scope.distance = {
-    cost: 30
-  };
+  $rootScope.id =$rootScope.id;
+  
+  $http.get(baseUrl+"api/userdetail/"+$rootScope.id, user).success(function(res) {
+        
+           
+       $scope.setting = res.data;
+      
+       var str = $scope.setting.user_agegroup;
+       var res = str.split("_");
+       $scope.position = {
+          name: 'age group',
+          minAge: res[0],
+          maxAge: res[1]
+        };
+
+        $scope.distance = {
+          cost: $scope.setting.user_distance
+        };
+
+        setInterval(function(){
+            $scope.updatesettngs();
+          }, 10000);
+
+        showGenderpref(1);
+      
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
+
+ $scope.updatesettngs = function()
+   {
+      
+          var one = $("#first_scale").val();
+          var two = $("#second_scale").val();
+        if(one){
+          var user = {
+             "user_id" : $rootScope.id,
+             "user_agegroup" : one+"_"+two,
+             "user_meet" : $("#gendervalue").val(),
+             "user_distance" : $scope.distance.cost
+          };
+
+          var data = user;
+          console.log(data);
+         
+            $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+            $http.post(baseUrl+"api/updatesettings", data).success(function(res) {
+              
+              console.log(res);
+
+            }).error(function(error) {
+              
+              console.log(error);
+
+            });
+          }
+     };
+   
+    $scope.position = {
+          name: 'age group',
+          minAge: 20,
+          maxAge: 40
+        };
+
+        $scope.distance = {
+          cost: 30
+        };
+
+
   $scope.currencyFormatting = function(value) { return value.toString(); };
 })
 
@@ -299,17 +365,17 @@ angular.module('starter.controllers', [])
     event.event_no_of_people = $("#gender").val();
     event.event_invite = $("#invitepeoplevalue").val();
     event.event_place = $("#event_place").val();
-    event.event_age = '';
+    event.event_age = '25_24';
     event.event_meet = 'men';
-    event.event_friends = '0';
-    event.event_personal = '0';
+    event.event_friends = 'yes';
+    event.event_personal = 'yes';
 
     var data = event;
 
       $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
       $http.post(baseUrl+"api/newevent", data).success(function(res) {
           
-        $rootScope.id = res.data.id;
+        $rootScope.event_id = res.data.id;
 
         $location.path("/tab/eventpreferences");
 
@@ -348,6 +414,41 @@ angular.module('starter.controllers', [])
     minAge: 25,
     maxAge: 40
   };
+
+  $scope.wasim = '';
+  $scope.change = function()
+   {
+      
+          var one = $("#first_scale").val();
+          var two = $("#second_scale").val();
+        if(one){
+          var event = {
+             "event_id" : $rootScope.event_id,
+             "event_age" : one+"_"+two,
+             "event_meet" : $("#gendervalue").val(),
+             "event_friends" : $("#invitefriendvalue").val(),
+             "event_personal" : $("#personalinvitevalue").val()
+          };
+
+          var data = event;
+         
+            $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+            $http.post(baseUrl+"api/updateevent", data).success(function(res) {
+              
+              console.log(res);
+
+            }).error(function(error) {
+              
+              console.log(error);
+
+            });
+        }
+     };
+
+   setInterval(function(){
+      $scope.change();
+    }, 10000);
+
 });
 
 

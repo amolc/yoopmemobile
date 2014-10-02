@@ -1,4 +1,4 @@
-<ion-view title="Settings">
+<ion-view title="Settings" id="settingcont">
   <ion-content class="padding">
     <div id="profile-event">
       <div id="profile" class="row">
@@ -19,11 +19,10 @@
               <slider floor="10" ceiling="60" ng-model-low="position.minAge" ng-model-high="position.maxAge"></slider>
               <div class="Scale1Text">&#123;&#123;position.minAge&#125;&#125;</div>
               <div class="Scale2Text">&#123;&#123;position.maxAge&#125;&#125;</div>
+              <input type="hidden"  id="first_scale" value="{{position.minAge}}" />
+              <input type="hidden"  id="second_scale" value="{{position.maxAge}}"/>
             </div>
-            <!--<div class="Scale1"></div>
-        <div class="Scale2"></div>
-        <div class="Scale1Text"> 18 </div>
-        <div class="Scale2Text"> 60 </div>--> 
+            
           </div>
         </div>
         <div class="clear"></div>
@@ -46,14 +45,12 @@
           <div class="AgeScale" id="distance_scale">
             <div class="demo">
               <p style="display:none;">&#123;&#123;distance.cost&#125;&#125;</p>
+               <input type="hidden"  id="distance_scaledata" value="{{distance.cost}}"/>
               <slider floor="10" ceiling="80" step="1" precision="1" ng-model="distance.cost"></slider>
             </div>
             <div class="Scale1singleText price_range" id="minamount">0km</div>
             <div class="Scalesingle2Text price_range" id="maxamount" >80km</div>
-            <!--<div class="Scale1"></div>
-        <div class="Scale2"></div>
-        <div class="Scale1Text"> 18 </div>
-        <div class="Scale2Text"> 60 </div>--> 
+          
           </div>
         </div>
         <div class="clear"></div>
@@ -61,5 +58,6 @@
       </div>
       <div class="clear"></div>
     </div>
+    <div class="clear"></div>
   </ion-content>
 </ion-view>

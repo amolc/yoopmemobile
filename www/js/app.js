@@ -164,3 +164,5 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     
 });
 
+
+
