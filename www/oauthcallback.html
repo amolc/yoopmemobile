@@ -1,11 +1,14 @@
 <html>
 <body>
 <script>
-
-    window.opener.oauthCallback(window.location.href);
-    window.close();
-//window.location.href = 'http://node.fountaintechies.com:4000/mobile/#/getuser';
-</script>
+		try {
+			window.opener.oauthCallback(window.location.href);
+			window.close();
+		}
+		catch(e) {
+			alert(e.message);
+		}
+	</script>
 </body>
 <div id="main">
 	</div>
