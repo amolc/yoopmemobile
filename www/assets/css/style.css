@@ -6,6 +6,7 @@
 body {
 }
 #MainWrapper {
+    background: #fff;
 }
 .CreateEventMain {
 	width: 100%;
@@ -23,7 +24,6 @@ body {
 .AgeScale {
 	width: 85%;
 	float: right;
-	position: relative;
 	font: 'source_sans_prosemibold';
 	color: #d12d44;
 }
@@ -77,7 +77,7 @@ body {
 	font: 'source_sans_prosemibold';
 	color: #d12d44;
 }
-.Gender {
+/*.Gender {
 	width: 70%;
 	float: left;
 	margin-top: 4%;
@@ -85,29 +85,29 @@ body {
 .GenderMen {
 	width: 29%;
 	float: left;
-}
-.GenderMen img {
+}*/
+/*.GenderMen img {
 	width: 100%;
 	background-size: 100% 100%;
-}
-.GenderWomen {
+}*/
+/*.GenderWomen {
 	width: 29%;
 	float: left;
 	margin-left: 5%;
-}
-.GenderWomen img {
+}*/
+/*.GenderWomen img {
 	width: 100%;
 	background-size: 100% 100%;
-}
-.GenderAnyone {
+}*/
+/*.GenderAnyone {
 	width: 29%;
 	float: left;
 	margin-left: 5%;
-}
-.GenderAnyone img {
+}*/
+/*.GenderAnyone img {
 	width: 100%;
 	background-size: 100% 100%;
-}
+}*/
 .InviteFriends {
 	width: 80%;
 	margin: 0 auto;
@@ -273,7 +273,7 @@ body {
 	padding: 0px !important;
 }
 #MainWrapper {
-	/*float: left;*/
+	float: left;
 	margin-top: 10px;
 	width: 100%;
 }

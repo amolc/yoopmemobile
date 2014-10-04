@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+    <!-- your app's js -->
+    <link rel="stylesheet" href="assets/css/angular-slider.css">
+    <script src="cordova.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/semi-controller.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/openfb-angular.js"></script>
+    
+    <script src="assets/js/angular-slider.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/angular-slider.css">
+     
+    
+<!-- CSS LINKS -->
+<!-- JS Functions -->
+<script type="text/javascript">
+function showGenderpref(data){
+  if(data=='0'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#mengrey').show();
+    $('#womengrey').show();
+    $('#anyonecolour').show();
+    $('#gendervalue').val('all');
+    $('#gender').val('0');
+  }else if(data=='1'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#womengrey').show();
+    $('#mencolour').show();
+    $('#gendervalue').val('men');
+    $('#gender').val('1');
+  }else if(data=='2'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#mengrey').show();
+    $('#womencolour').show();
+    $('#gendervalue').val('women');
+    $('#gender').val('2');
+  }
+}
+function showinvitefriend(data){
+  if(data=='0'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#yesinvitefriendcolour').show();
+    $('#noinvitefriendgrey').show();
+    $('#invitefriendvalue').val('yes');
+    $('#invitefriend').val('0');
+  }else if(data=='1'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#noinvitefriendcolour').show();
+    $('#yesinvitefriendgrey').show();
+    $('#invitefriendvalue').val('no');
+    $('#invitefriend').val('1');
+  }
+}
+function showpersonalinvite(data){
+  if(data=='0'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#yespersonalinvitecolour').show();
+    $('#nopersonalinvitegrey').show();
+    $('#personalinvitevalue').val('yes');
+    $('#personalinvite').val('0');
+  }else if(data=='1'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#nopersonalinvitecolour').show();
+    $('#yespersonalinvitegrey').show();
+    $('#personalinvitevalue').val('no');
+    $('#personalinvite').val('1');
+  }
+}
+
+</script>
+<script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.jcarousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/skins/ie7/skin.css" />
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel();
+});
+
+</script>
+<!-- JS Functions -->
+<style>
+.slider_main {
+  width: 100%;
+}
+@media screen and (min-width: 315px) and (max-width: 354px) {
+}
+@media screen and (min-width: 355px) and (max-width: 450px) {
+.jcarousel-skin-ie7 .jcarousel-item {
+  width: 90px;
+}
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+  width: 287px;
+}
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+  width: 278px;
+}
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+  top: 47px;
+}
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+  top: 47px;
+}
+.slider_text {
+  font: 14px/1 Arial, "Helvetica", sans-serif;
+}
+}
+@media screen and (min-width: 475px) and (max-width: 630px) {
+.jcarousel-skin-ie7 .jcarousel-item {
+  width: 128px;
+}
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+  width: 403px;
+}
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+  width: 394px;
+}
+.main_inner_slide a img {
+  border-radius: 73px;
+}
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+  top: 63px;
+}
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+  top: 63px;
+}
+.slider_text {
+  font: 16px/1 Arial, "Helvetica", sans-serif;
+}
+}
+@media screen and (min-width: 635px) and (max-width: 645px) {
+.jcarousel-skin-ie7 .jcarousel-item {
+  width: 181px;
+}
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+  width: 564px;
+}
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+  width: 555px;
+}
+.main_inner_slide a img {
+  border-radius: 100px;
+}
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+  top: 93px;
+}
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+  top: 93px;
+}
+.slider_text {
+  font: 18px/1 Arial, "Helvetica", sans-serif;
+}
+}
+</style>
+  </head>
+  <body ng-app="starter" animation="slide-left-right-ios7">
+    <!-- 
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+        Back
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!-- 
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+    <!-- your app's js -->
+    <link rel="stylesheet" href="assets/css/angular-slider.css">
+    
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/semi-controller.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/openfb-angular.js"></script>
+    
+    <script src="assets/js/angular-slider.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/angular-slider.css">
+     
+    
+<!-- CSS LINKS -->
+<!-- JS Functions -->
+<script type="text/javascript">
+function showGenderpref(data){
+  if(data=='0'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#mengrey').show();
+    $('#womengrey').show();
+    $('#anyonecolour').show();
+    $('#gendervalue').val('all');
+    $('#gender').val('0');
+  }else if(data=='1'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#womengrey').show();
+    $('#mencolour').show();
+    $('#gendervalue').val('men');
+    $('#gender').val('1');
+  }else if(data=='2'){
+    $('.gendergrey').hide();
+    $('.gendercolour').hide();
+    $('#anyonegrey').show();
+    $('#mengrey').show();
+    $('#womencolour').show();
+    $('#gendervalue').val('women');
+    $('#gender').val('2');
+  }
+}
+function showinvitefriend(data){
+  if(data=='0'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#yesinvitefriendcolour').show();
+    $('#noinvitefriendgrey').show();
+    $('#invitefriendvalue').val('yes');
+    $('#invitefriend').val('0');
+  }else if(data=='1'){
+    $('.invitefriendgrey').hide();
+    $('.invitefriendcolour').hide();
+    $('#noinvitefriendcolour').show();
+    $('#yesinvitefriendgrey').show();
+    $('#invitefriendvalue').val('no');
+    $('#invitefriend').val('1');
+  }
+}
+function showpersonalinvite(data){
+  if(data=='0'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#yespersonalinvitecolour').show();
+    $('#nopersonalinvitegrey').show();
+    $('#personalinvitevalue').val('yes');
+    $('#personalinvite').val('0');
+  }else if(data=='1'){
+    $('.personalinvitegrey').hide();
+    $('.personalinvitecolour').hide();
+    $('#nopersonalinvitecolour').show();
+    $('#yespersonalinvitegrey').show();
+    $('#personalinvitevalue').val('no');
+    $('#personalinvite').val('1');
+  }
+}
+
+</script>
+<script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery.jcarousel.min.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/skins/ie7/skin.css" />
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel();
+});
+
+</script>
+<!-- JS Functions -->
+<style>
+.slider_main {
+  width: 100%;
+}
+@media screen and (min-width: 315px) and (max-width: 354px) {
+}
+@media screen and (min-width: 355px) and (max-width: 450px) {
+.jcarousel-skin-ie7 .jcarousel-item {
+  width: 90px;
+}
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+  width: 287px;
+}
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+  width: 278px;
+}
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+  top: 47px;
+}
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+  top: 47px;
+}
+.slider_text {
+  font: 14px/1 Arial, "Helvetica", sans-serif;
+}
+}
+@media screen and (min-width: 475px) and (max-width: 630px) {
+.jcarousel-skin-ie7 .jcarousel-item {
+  width: 128px;
+}
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+  width: 403px;
+}
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+  width: 394px;
+}
+.main_inner_slide a img {
+  border-radius: 73px;
+}
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+  top: 63px;
+}
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+  top: 63px;
+}
+.slider_text {
+  font: 16px/1 Arial, "Helvetica", sans-serif;
+}
+}
+@media screen and (min-width: 635px) and (max-width: 645px) {
+.jcarousel-skin-ie7 .jcarousel-item {
+  width: 181px;
+}
+.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
+  width: 564px;
+}
+.jcarousel-skin-ie7 .jcarousel-container-horizontal {
+  width: 555px;
+}
+.main_inner_slide a img {
+  border-radius: 100px;
+}
+.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
+  top: 93px;
+}
+.jcarousel-skin-ie7 .jcarousel-next-horizontal {
+  top: 93px;
+}
+.slider_text {
+  font: 18px/1 Arial, "Helvetica", sans-serif;
+}
+}
+</style>
+  </head>
+  <body ng-app="starter" animation="slide-left-right-ios7">
+    <!-- 
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
+      <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
+        Back
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <!-- 
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>
+>>>>>>> bilal

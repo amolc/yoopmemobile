@@ -1,9 +1,9 @@
-if (document.location.hostname == "localhost"){
+/*if (document.location.hostname == "localhost"){
  var base = window.location.origin;
  var baseUrl = 'http://localhost:4000/';
-} else {
-  var baseUrl = "http://node.fountaintechies.com:4000/"; 
-}
+} else {*/
+  var baseUrl = "http://node.fountaintechies.com/yoopmemobile/www/"; 
+//}
 
 angular.module('starter.controllers', [])
 
@@ -263,7 +263,7 @@ angular.module('starter.controllers', [])
 
             
             var file = element.files[0];
-             $("#friend-list").append('<div  class="col"><a><img id="'+file.name+'" ng-src="" alt="" /></a></div>');
+             $("#friend-list").append('<a><img id="'+file.name+'" ng-src="" alt="" /></a>');
 
           document.getElementById(file.name).src = oFREvent.target.result;
            // var file = $scope.myFile;
