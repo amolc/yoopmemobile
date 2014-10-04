@@ -2,7 +2,7 @@
  var base = window.location.origin;
  var baseUrl = 'http://localhost:4000/';
 } else {*/
-  var baseUrl = "http://node.fountaintechies.com:4000/"; 
+  var baseUrl = "http://node.fountaintechies.com/yoopmemobile/www/"; 
 //}
 
 angular.module('starter.controllers', [])
