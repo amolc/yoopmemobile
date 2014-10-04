@@ -1,12 +1,15 @@
-<ion-view title="Create" ng-controller="CreateEventCtrl">
+<ion-view title="Create Event" ng-controller="CreateEventCtrl">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion ion-ios7-email"></button>
+    </ion-nav-buttons>
   <ion-content>
 
   	<div id="profile-wrapper">
 	    <div id="profile" class="row">
-	  		<div class="col">
-	  			<img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+	  		<div>
+	  			<img class="imgprofile" ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
 	  		</div>
-		  	<div class="col col-75">
+		  	<div class="col col-60">
 			  	<h3 class="ng-binding">Create Event</h3>			  	
 			  	<h4 class="ng-binding">Please create a new event</h4>		   
 			  </div>  
@@ -91,7 +94,7 @@
 </div>
 
 <div style="text-align:center;">
-     <img ng-click="newevent(event)" style="width:50%; margin:45px 0 0 0;" src="img/event-next.png">
+     <img ng-click="newevent(event)" style="width:170px; margin:15px 0;" src="img/event-next.png">
 </div>
 <div class="clear"></div>
 
