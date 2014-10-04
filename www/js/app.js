@@ -20,8 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     }
   });
 
-
-  OpenFB.init('102081083230772','http://node.fountaintechies.com:4000/mobile/oauthcallback.html',$window.localStorage);
+  OpenFB.init('1436843073264106','https://www.facebook.com/connect/login_success.html',$window.localStorage);
 
         $ionicPlatform.ready(function () {
             if (window.StatusBar) {
