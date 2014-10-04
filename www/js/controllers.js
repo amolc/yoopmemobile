@@ -354,6 +354,10 @@ angular.module('starter.controllers', [])
   $scope.profile = Friends.get($stateParams.friendId);
 })
 
+.controller('EventsDetailCtrl', function($scope, $stateParams, Friends) {
+  $scope.profile = Friends.get($stateParams.friendId);
+})
+
 .controller('CreateEventCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
   
   //$scope.event = '';

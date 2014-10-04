@@ -157,9 +157,9 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     .state('tab.eventdetails', {
       url: '/eventdetails',
       views: {
-        'tab-eventdetails': {
+        'tab-dash': {
           templateUrl: 'templates/tab-event-details.html',
-          //controller: 'AccountCtrl'
+          controller: 'EventsDetailCtrl'
         }
       }
     });
