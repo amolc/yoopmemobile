@@ -18,7 +18,7 @@
 	<div class="list">
 	    
 	   <a ng-repeat="event in events" class="item item-avatar" href="#/tab/eventdetail/{{event.id}}">
-	      <img ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
+	      <img ng-src="https://graph.facebook.com/{{event.user_media_id}}/picture?width=300&height=300" alt="" src="https://graph.facebook.com/{{event.user_media_id}}/picture?width=300&height=300">
 	      <h2 style="">{{event.event_invite}} with {{event.user_name}} <span style="margin-left:10px;">{{event.event_time}}</span></h2>
 	      <p>0.7 KM</p>
 	    </a>
