@@ -108,6 +108,8 @@ angular.module('starter.controllers', [])
       OpenFB.get('/me').success(function (user) {
       	
            $scope.fblogin(user);
+
+           $rootScope.profileimage = "https://graph.facebook.com/"+user.id+"/picture"
         });
     };
 
