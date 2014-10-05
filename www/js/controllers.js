@@ -4,7 +4,7 @@ if (document.location.hostname == "localhost"){
 } else {
   var baseUrl = "http://node.fountaintechies.com:4000/"; 
 }
- var baseUrl = "http://node.fountaintechies.com:4000/"; 
+ //var baseUrl = "http://node.fountaintechies.com:4000/"; 
  
 angular.module('starter.controllers', [])
 
@@ -459,6 +459,11 @@ angular.module('starter.controllers', [])
     }, 10000);
 
 })
+.controller('eventdetail', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
+  
+ 
+
+}) 
 .controller('getuserCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   
   OpenFB.get('/me').success(function (user) {

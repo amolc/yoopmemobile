@@ -6,7 +6,7 @@
     <div id="profile-wrapper">
         <div id="profile" class="row">
       		<div>
-      			<img class="imgprofile" ng-src="{{profileimage}}" alt="" src="./profile-pics/kate.jpg">
+      			<img class="imgprofile" ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
       		</div>
     	  	<div class="col col-60">
     		  	<h3 class="ng-binding">Events</h3>    		  	
@@ -17,8 +17,8 @@
 	</div> 
 	<div class="list">
 	    
-	   <a ng-repeat="event in events" class="item item-avatar" href="#/tab/eventdetails">
-	      <img ng-src="./profile-pics/kate.jpg" alt="" src="./profile-pics/kate.jpg">
+	   <a ng-repeat="event in events" class="item item-avatar" href="#/tab/eventdetail/{{event.id}}">
+	      <img ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
 	      <h2 style="">{{event.event_invite}} with {{event.user_name}} <span style="margin-left:10px;">{{event.event_time}}</span></h2>
 	      <p>0.7 KM</p>
 	    </a>
