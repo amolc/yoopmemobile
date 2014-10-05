@@ -92,7 +92,7 @@ angular.module('starter.controllers', [])
 
 	$scope.facebookLogin = function () {
 
-            OpenFB.login('email,read_stream,publish_stream').then(
+            OpenFB.login('email,read_stream,publish_actions').then(
                 function () {
                     $scope.getfblogin();
                 },
@@ -103,6 +103,7 @@ angular.module('starter.controllers', [])
 
 
     $scope.getfblogin = function(){
+    
       OpenFB.get('/me').success(function (user) {
            $scope.fblogin(user);
         });
@@ -110,18 +111,16 @@ angular.module('starter.controllers', [])
 
 
     $scope.fblogin = function(user){
+      
+      alert("success") ;
    
       $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
       $http.post(baseUrl+"api/newfbuser", user).success(function(res) {
-          
-        $rootScope.id = res.data.id;
-
-       $location.path("/tab/profile/"+$rootScope.id);
-
+          	$rootScope.id = res.data.id;
+          	 alert($rootScope.id) ;
+	        $location.path("/tab/profile/"+$rootScope.id);
       }).error(function(error) {
-        
-        console.log(error);
-
+        	 console.log(error);
       });
    }; // fb login sope
     

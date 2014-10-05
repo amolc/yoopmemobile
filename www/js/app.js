@@ -1,13 +1,9 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.services','openfb'])
 
 .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+ 
+  OpenFB.init('1436843073264106','https://www.facebook.com/connect/login_success.html' ,$window.localStorage);
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,32 +16,20 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     }
   });
 
-  OpenFB.init('1436843073264106','https://www.facebook.com/connect/login_success.html',$window.localStorage);
+        $rootScope.$on('$stateChangeStart', function(event, toState) {
+             if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
+                $state.go('app.login');
+                 event.preventDefault();
+             }
+         });
 
-        $ionicPlatform.ready(function () {
-            if (window.StatusBar) {
-                StatusBar.styleDefault();
-            }
-        });
-
-        // $rootScope.$on('$stateChangeStart', function(event, toState) {
-        //     if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
-        //         $state.go('app.login');
-        //         event.preventDefault();
-        //     }
-        // });
-
-        // $rootScope.$on('OAuthException', function() {
-        //     $state.go('app.login');
-        // });
+         $rootScope.$on('OAuthException', function() {
+             $state.go('app.login');
+         });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
 
-  // Ionic uses AngularUI Router which uses the concept of states
-  // Learn more here: https://github.com/angular-ui/ui-router
-  // Set up the various states which the app can be in.
-  // Each state's controller can be found in controllers.js
   $stateProvider
 
     
