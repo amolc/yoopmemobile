@@ -4,7 +4,7 @@ if (document.location.hostname == "localhost"){
 } else {
   var baseUrl = "http://node.fountaintechies.com:4000/"; 
 }
- //var baseUrl = "http://node.fountaintechies.com:4000/"; 
+ var baseUrl = "http://node.fountaintechies.com:4000/"; 
  
 angular.module('starter.controllers', [])
 
