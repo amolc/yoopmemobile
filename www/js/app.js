@@ -120,7 +120,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     .state('tab.eventdetail', {
       url: '/eventdetail/:id',
       views: {
-        'tab-events': {
+        'tab-dash': {
           templateUrl: 'templates/event-detail.html',
           controller: 'EventDetailCtrl'
         }

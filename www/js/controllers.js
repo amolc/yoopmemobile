@@ -90,7 +90,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
-
+ $rootScope.profileimage = '';
 	$scope.facebookLogin = function () {
 
             OpenFB.login('email,read_stream,publish_actions').then(
@@ -109,7 +109,8 @@ angular.module('starter.controllers', [])
       	
            $scope.fblogin(user);
 
-           $rootScope.profileimage = "https://graph.facebook.com/"+user.id+"/picture"
+ $rootScope.profileimage = "https://graph.facebook.com/"+user.id+"/picture?width=300&height=300";
+          // $rootScope.profileimage = "https://graph.facebook.com/10205337293770681/picture";
         });
     };
 
@@ -160,7 +161,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('UserProfileCtrl', function( $stateParams,$rootScope,$scope, $location, $http, profile) {
-
+//$rootScope.profileimage = "https://graph.facebook.com/10205337293770681/picture?width=300&height=300";
   var user = { };
 
 	$rootScope.id = $stateParams.id;
