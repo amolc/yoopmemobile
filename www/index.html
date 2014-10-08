@@ -102,36 +102,36 @@ function showpersonalinvite(data){
   }
 }
 
-// // Wait for PhoneGap to load
-//     //
-//     document.addEventListener("deviceready", onDeviceReady, false);
+// Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-//     // PhoneGap is ready
-//     //
-//     function onDeviceReady() {
-//         navigator.geolocation.getCurrentPosition(onSuccess, onError);
-//     }
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
 
-//     // onSuccess Geolocation
-//     //
-//     function onSuccess(position) {
-//         var element = document.getElementById('geolocation');
-//         element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-//                             'Longitude: '          + position.coords.longitude             + '<br />' +
-//                             'Altitude: '           + position.coords.altitude              + '<br />' +
-//                             'Accuracy: '           + position.coords.accuracy              + '<br />' +
-//                             'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-//                             'Heading: '            + position.coords.heading               + '<br />' +
-//                             'Speed: '              + position.coords.speed                 + '<br />' +
-//                             'Timestamp: '          + new Date(position.timestamp)          + '<br />';
-//     }
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + new Date(position.timestamp)          + '<br />';
+    }
 
-//     // onError Callback receives a PositionError object
-//     //
-//     function onError(error) {
-//         alert('code: '    + error.code    + '\n' +
-//               'message: ' + error.message + '\n');
-//     }
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
 </script>
 
 <!-- <script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script> -->
@@ -140,7 +140,7 @@ function showpersonalinvite(data){
 
   </head>
   <body ng-app="starter" animation="slide-left-right-ios7">
-   <!--  <p id="geolocation">Finding geolocation...</p> -->
+    <p id="geolocation">Finding geolocation...</p>
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
