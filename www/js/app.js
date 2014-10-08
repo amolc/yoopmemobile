@@ -2,7 +2,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
 
 .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
  
-  OpenFB.init('1436843073264106','' ,$window.localStorage);
+  OpenFB.init('1436843073264106','https://www.facebook.com/connect/login_success.html' ,$window.localStorage);
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
