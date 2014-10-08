@@ -15,9 +15,8 @@
   <preference name="BackupWebStorage" value="none"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
-    <param name="http://api.phonegap.com/1.0/geolocation" value="geolocation" onload="true"/>
   </feature>
 
-   <gap:plugin name="org.li8.inappbrowser" version="0.1" />
-  <icon src="icon.png" />
+  <feature name="http://api.phonegap.com/1.0/geolocation"/>
+
 </widget>
