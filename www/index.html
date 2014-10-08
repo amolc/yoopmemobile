@@ -23,6 +23,7 @@
     <!-- your app's js -->
     <link rel="stylesheet" href="assets/css/angular-slider.css">
     <script src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="phonegap-1.2.0.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/semi-controller.js"></script>
@@ -101,93 +102,45 @@ function showpersonalinvite(data){
   }
 }
 
-</script>
-<script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="assets/js/jquery.jcarousel.min.js"></script>
-<link rel="stylesheet" type="text/css" href="assets/css/skins/ie7/skin.css" />
-<script type="text/javascript">
+// Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
-jQuery(document).ready(function() {
-    jQuery('#mycarousel').jcarousel();
-});
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
 
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + new Date(position.timestamp)          + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
 </script>
+
+<!-- <script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script> -->
+
 <!-- JS Functions -->
-<style>
-.slider_main {
-  width: 100%;
-}
-@media screen and (min-width: 315px) and (max-width: 354px) {
-}
-@media screen and (min-width: 355px) and (max-width: 450px) {
-.jcarousel-skin-ie7 .jcarousel-item {
-  width: 90px;
-}
-.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
-  width: 287px;
-}
-.jcarousel-skin-ie7 .jcarousel-container-horizontal {
-  width: 278px;
-}
-.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
-  top: 47px;
-}
-.jcarousel-skin-ie7 .jcarousel-next-horizontal {
-  top: 47px;
-}
-.slider_text {
-  font: 14px/1 Arial, "Helvetica", sans-serif;
-}
-}
-@media screen and (min-width: 475px) and (max-width: 630px) {
-.jcarousel-skin-ie7 .jcarousel-item {
-  width: 128px;
-}
-.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
-  width: 403px;
-}
-.jcarousel-skin-ie7 .jcarousel-container-horizontal {
-  width: 394px;
-}
-.main_inner_slide a img {
-  border-radius: 73px;
-}
-.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
-  top: 63px;
-}
-.jcarousel-skin-ie7 .jcarousel-next-horizontal {
-  top: 63px;
-}
-.slider_text {
-  font: 16px/1 Arial, "Helvetica", sans-serif;
-}
-}
-@media screen and (min-width: 635px) and (max-width: 645px) {
-.jcarousel-skin-ie7 .jcarousel-item {
-  width: 181px;
-}
-.jcarousel-skin-ie7 .jcarousel-clip-horizontal {
-  width: 564px;
-}
-.jcarousel-skin-ie7 .jcarousel-container-horizontal {
-  width: 555px;
-}
-.main_inner_slide a img {
-  border-radius: 100px;
-}
-.jcarousel-skin-ie7 .jcarousel-prev-horizontal {
-  top: 93px;
-}
-.jcarousel-skin-ie7 .jcarousel-next-horizontal {
-  top: 93px;
-}
-.slider_text {
-  font: 18px/1 Arial, "Helvetica", sans-serif;
-}
-}
-</style>
+
   </head>
   <body ng-app="starter" animation="slide-left-right-ios7">
+    <p id="geolocation">Finding geolocation...</p>
     <!-- 
       The nav bar that will be updated as we navigate between views.
     -->
