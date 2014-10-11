@@ -1,29 +1,50 @@
-<ion-view title="Events">
+<ion-view title="Events" ng-controller="EventsCtrl">
     <ion-nav-buttons side="right">
         <button class="button button-icon ion ion-ios7-email"></button>
     </ion-nav-buttons>
   <ion-content class="">
-    <div id="profile-wrapper">
+    <div id="profile-wrapper" >
         <div id="profile" class="row">
       		<div>
-      			<img class="imgprofile" ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
+      			<img  class="imgprofile" ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
       		</div>
     	  	<div class="col col-60">
-    		  	<h3 class="ng-binding">Events</h3>    		  	
+    		  	<h3  class="ng-binding">Events</h3>    		  	
     		  	<h4 class="ng-binding">Find out some exciting people nearby</h4>
     			  <br/>
     		</div>  
       </div>  
 	</div> 
-	<div class="list">
+<div class="clear"></div>
+
+  <div id="eventtabs">
+    <p class="eventtabsdata active one" ng-click="eventdata('nearby')">Near By</p>
+    <p class="eventtabsdata two" ng-click="eventdata('myevents')">My Events</p>
+
+    <div class="clear"></div>
+
+  </div>
+<div class="clear"></div>
+
+	<div class="list" id="myevents" style="display:none;">
 	    
-	   <a ng-repeat="event in events" class="item item-avatar" href="#/tab/eventdetail/{{event.id}}">
+	  <a ng-repeat="event in myevents" class="item item-avatar" href="#/tab/eventdetail/{{event.id}}">
 	      <img ng-src="https://graph.facebook.com/{{event.user_media_id}}/picture?width=300&height=300" alt="" src="https://graph.facebook.com/{{event.user_media_id}}/picture?width=300&height=300">
 	      <h2 style="">{{event.event_invite}} with {{event.user_name}} <span style="margin-left:10px;">{{event.event_time}}</span></h2>
 	      <p>0.7 KM</p>
-	    </a>
-	   
+	  </a>
+	
+  </div>
 
-</div>
+  <div class="list" id="nearevents">
+      
+     <a ng-repeat="eventer in events" class="item item-avatar" href="javascript:;">
+        <img ng-click="showprofile(eventer.user_id)" ng-src="https://graph.facebook.com/{{eventer.user_media_id}}/picture?width=300&height=300" alt="" src="https://graph.facebook.com/{{eventer.user_media_id}}/picture?width=300&height=300">
+        <h2 style="">{{eventer.event_invite}} with {{eventer.user_name}} <span style="margin-left:10px;">{{eventer.event_time}}</span></h2>
+        <p><span style="float:left;">0.7 KM</span> <span ng-click="joinevent(eventer.id)" style="float:right;">Join</span></p>
+      </a>
+  
+  </div>
+
   </ion-content>
 </ion-view>

@@ -632,3 +632,18 @@ ion-nav-view {
     padding: 2px;
     width: 100%;
 }
+#eventtabs{float: left;
+width: 100%;
+margin-top: 5px;}
+
+.eventtabsdata{
+    color: #000;
+background: #fff;
+padding: 5px; cursor: pointer;
+float: left;
+}
+
+.active{
+    color: #fff !important;
+background: #ccc !important;
+}

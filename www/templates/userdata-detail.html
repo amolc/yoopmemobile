@@ -1,0 +1,88 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view title="My Profile">
+    <ion-nav-buttons side="right">
+        <button class="button button-icon ion ion-ios7-email"></button>
+    </ion-nav-buttons>
+  <ion-content class="user-details">
+      <div id="profile-wrapper">
+        <div id="profile" class="row">
+         
+      		
+           <form id="btnpup" class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">  
+          <div class="col relative" >
+            <!-- <img id="imgprofile" ng-src="{{profile.user_url}}" alt="" /> -->
+            <img id="imgprofile" ng-src="{{profileimage}}" alt="" />
+            
+           <!--  <input type="file" class="file-upload" file-model="profileFile" id="profileupload" onchange="angular.element(this).scope().uploadprofilepic(this)"  /> -->
+          </div>
+        </form>
+         
+    	  	<div class="col col-60">
+    		  	<h3 id="user_name">{{profile.user_name}} 
+
+              
+
+            <h3 class="edittext" id="user_name_text"><input ng-blur="updatedata('user_name')" type="text" ng-model="profile.user_name"></h3>
+
+    		  	
+
+    		  	<h4 id="user_description">
+
+              {{profile.user_description}}
+
+              
+            </h4>
+
+            <h4 id="user_description_text" class="edittext" id="user_name_text"><input ng-blur="updatedata('user_description')" type="text" ng-model="profile.user_description"></h4>
+    			  <br/>
+    		  <span class="pull-right">{{profile.user_age}}</span>
+    		</div>  
+      </div>  
+	</div>
+  <form class="form-horizontal source_sans_prosemibold" id="profileform" enctype="multipart/form-data">  
+  <div id="friend-list" class="row">
+    
+      <!-- <div class="col relative one-third"> -->
+      <div class="col">
+         
+          <img class="friend-list" ng-src="./profile-pics/upload.png" alt=""  />
+          <!-- <input type="file" class="file-upload" file-model="myFile" id="assologo" onchange="angular.element(this).scope().uploadupdatelogo(this)"  /> -->
+</div>
+       
+      
+  	    
+   
+  	<!-- <div class="col"><a><img ng-src="./profile-pics/p1.jpg" alt="" /></a></div>
+  	<div class="col"><a><img ng-src="./profile-pics/p2.jpg" alt="" /></a></div> -->  	
+    
+  </div>
+  </form>
+
+  <div class="text-section row">
+    <h2 id="style">My Style </h2>
+    <h3 id="style">Location </h3>
+    </div>
+    <div class="text-section row">
+       <p id="smile" class="showlocbio">{{profile.user_bio}} , {{profile.user_location}} </p>
+
+       <p id="smile" class="user_bio"><input ng-blur="updatestylelocation('user_bio')" type="text" ng-model="profile.user_bio"></p>
+
+       <p id="smile" class="user_location"><input ng-blur="updatestylelocation('user_location')" type="text" ng-model="profile.user_location"></p>
+    </div>
+  
+  <div class="row btnssocial" id="psocial">
+  	<div id="linkd" class="col first"><a ></a></div>
+
+		<div id="fb" class="col second"><a id="facebook" ></a></div>
+		<div id="twt" class="col third"><a id="twitter" ></a></div>	
+  </div>
+  
+  
+
+  </ion-content>
+</ion-view>

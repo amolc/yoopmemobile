@@ -4,7 +4,7 @@ if (document.location.hostname == "localhost"){
 } else {
   var baseUrl = "http://node.fountaintechies.com:4000/"; 
 }
- var baseUrl = "http://node.fountaintechies.com:4000/"; 
+// var baseUrl = "http://node.fountaintechies.com:4000/"; 
  
 angular.module('starter.controllers', [])
 
@@ -396,23 +396,88 @@ angular.module('starter.controllers', [])
    }; // event sope
 })
 .controller('EventsCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
-  
+//$rootScope.id=1;
+      $scope.showprofile = function(userid)
+      {
+          $location.path("/tab/profiledata/"+userid);
+         // $location.path("/tab/profiledata/2");
+      };
+
+      $scope.joinevent = function(eventid)
+      {
+          //eventjoin
+          var data = {
+                      "user_id" : $rootScope.id,
+                      "event_id" : eventid
+                     };
+
+                  $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+                  $http.post(baseUrl+"api/eventjoin", data).success(function(res) {
+                    
+                    alert(res);
+
+                  }).error(function(error) {
+                    
+                    alert(error);
+
+                  });
+      };
+
+      $scope.eventdata = function(val){
+       
+        if(val == 'nearby'){
+                  $("#myevents").hide();
+                  $("#nearevents").show();
+                  
+                  $(".two").removeClass('active');
+                  $(".one").addClass('active');
+                  
+            }else{
+                  $("#nearevents").hide();
+                  $("#myevents").show();
+                  $(".one").removeClass('active');
+                  $(".two").addClass('active');
+                  
+                   var data = {
+                      "user_id" : $rootScope.id
+                    };
+
+                  $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+                  $http.post(baseUrl+"api/myevents", data).success(function(res) {
+                    
+                    $scope.myevents = res;
+
+                  }).error(function(error) {
+                    
+                    console.log(error);
+
+                  });
+            }
+      };
+
       $scope.events = '';
+      $scope.myevents = '';
       var data = {
         "user_id" : 1
       };
 
+
       $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
       $http.post(baseUrl+"api/allevents", data).success(function(res) {
-          
-        //console.log(res);
+        
         $scope.events = res;
+
+        $("#myevents").hide();
 
       }).error(function(error) {
         
         console.log(error);
 
       });
+      
+     
+
+      
 
 })
 .controller('CreateEventPreferencesCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
@@ -464,6 +529,34 @@ angular.module('starter.controllers', [])
  
 
 }) 
+
+.controller('UserDataProfileCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
+  
+  var user = { };
+
+  //$rootScope.id = $stateParams.id;
+  
+  $http.get(baseUrl+"api/userdetail/"+$stateParams.id, user).success(function(res) {
+        
+           console.log(res);
+      if(res.data.user_url == '')
+      {
+        res.data.user_url = './profile-pics/upload.png';
+      }
+      $scope.profile = res.data;
+      
+      $scope.likes = 2;
+
+      
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
+}) 
+
 .controller('getuserCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   
   OpenFB.get('/me').success(function (user) {

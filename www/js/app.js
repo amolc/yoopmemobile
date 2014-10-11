@@ -117,6 +117,16 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
       }
     })
 
+    .state('tab.profiledata', {
+      url: '/profiledata/:id',
+      views: {
+        'tab-events': {
+          templateUrl: 'templates/userdata-detail.html',
+          controller: 'UserDataProfileCtrl'
+        }
+      }
+    })
+
     .state('tab.eventdetail', {
       url: '/eventdetail/:id',
       views: {
