@@ -396,7 +396,7 @@ angular.module('starter.controllers', [])
    }; // event sope
 })
 .controller('EventsCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
-$rootScope.id=1;
+//$rootScope.id=1;
       $scope.showprofile = function(userid)
       {
           $location.path("/tab/profiledata/"+userid);
