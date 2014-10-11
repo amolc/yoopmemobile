@@ -414,7 +414,7 @@ angular.module('starter.controllers', [])
                   $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
                   $http.post(baseUrl+"api/eventjoin", data).success(function(res) {
                     
-                    alert(res);
+                    alert(res.message);
 
                   }).error(function(error) {
                     
@@ -539,10 +539,7 @@ angular.module('starter.controllers', [])
   $http.get(baseUrl+"api/userdetail/"+$stateParams.id, user).success(function(res) {
         
            console.log(res);
-      if(res.data.user_url == '')
-      {
-        res.data.user_url = './profile-pics/upload.png';
-      }
+      $scope.profiledataimage = "https://graph.facebook.com/"+res.data.user_media_id+"/picture?width=300&height=300";
       $scope.profile = res.data;
       
       $scope.likes = 2;
