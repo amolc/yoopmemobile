@@ -4,7 +4,7 @@ if (document.location.hostname == "localhost"){
 } else {
   var baseUrl = "http://node.fountaintechies.com:4000/"; 
 }
- var baseUrl = "http://node.fountaintechies.com:4000/"; 
+ //var baseUrl = "http://node.fountaintechies.com:4000/"; 
  
 angular.module('starter.controllers', [])
 
@@ -396,11 +396,11 @@ angular.module('starter.controllers', [])
    }; // event sope
 })
 .controller('EventsCtrl', function($stateParams,$rootScope,$scope, $location, $http) {
-//$rootScope.id=1;
+$rootScope.id=1;
       $scope.showprofile = function(userid)
       {
           $location.path("/tab/profiledata/"+userid);
-         // $location.path("/tab/profiledata/2");
+         
       };
 
       $scope.joinevent = function(eventid)
@@ -524,27 +524,18 @@ angular.module('starter.controllers', [])
     }, 10000);
 
 })
-.controller('eventdetail', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
-  
- 
-
-}) 
 
 .controller('UserDataProfileCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   
   var user = { };
 
-  //$rootScope.id = $stateParams.id;
-  
   $http.get(baseUrl+"api/userdetail/"+$stateParams.id, user).success(function(res) {
         
-           console.log(res);
+          
       $scope.profiledataimage = "https://graph.facebook.com/"+res.data.user_media_id+"/picture?width=300&height=300";
       $scope.profile = res.data;
       
       $scope.likes = 2;
-
-      
 
       }).error(function(error) {
         
@@ -554,10 +545,66 @@ angular.module('starter.controllers', [])
 
 }) 
 
-.controller('getuserCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
+.controller('UserEventProfileCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   
-  OpenFB.get('/me').success(function (user) {
-           console.log(user);
-        });
+  var user = { };
+
+  $http.get(baseUrl+"api/userdetail/"+$stateParams.id, user).success(function(res) {
+        
+          
+      $scope.profiledataimage = "https://graph.facebook.com/"+res.data.user_media_id+"/picture?width=300&height=300";
+      $scope.profile = res.data;
+      
+      $scope.likes = 2;
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
+})
+
+.controller('EventDetailCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
+  
+      $scope.eventpeople = '';
+      var data = {
+        "event_id" : $stateParams.id
+      };
+
+      var user = { };
+
+      $http.get(baseUrl+"api/eventdetail/"+$stateParams.id, user).success(function(res) {
+      
+      $scope.event = res.data;
+      
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
+
+      $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+      $http.post(baseUrl+"api/eventpeople", data).success(function(res) {
+        
+        $scope.eventpeople = res;
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
+      $scope.showprofile = function(userid)
+      {
+          $location.path("/tab/profileevent/"+userid);
+         
+      };
+
+      $scope.sendmessage = function(){
+          alert('Message Sent');
+      };
 
 });

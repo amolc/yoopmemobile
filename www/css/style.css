@@ -647,3 +647,12 @@ float: left;
     color: #fff !important;
 background: #ccc !important;
 }
+
+.main_inner_slide img{
+    border: 5px solid #dcdcdc;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}

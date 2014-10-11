@@ -1,43 +1,30 @@
 <ion-view title="EventDetail">
   <ion-content class="">
-    <div id="profile-wrapper">
+    <div id="profile-wrapper" >
         <div id="profile" class="row">
-      		<div class="col">
-      			<img ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
-      		</div>
-    	  	<div class="col col-75">
-    		  	<h3 class="ng-binding">Events</h3>    		  	
-    		  	<h4 class="ng-binding">Find out some exciting people nearby</h4>
-    			  <br/>
-    		</div>  
+          <div>
+            <img  class="imgprofile" ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
+          </div>
+          <div class="col col-60">
+            <h3  class="ng-binding">{{event.event_invite}} with kate</h3>           
+            <h4 class="ng-binding">{{event.event_name}} at {{event.event_time}}</h4>
+            <br/>
+        </div>  
       </div>  
-	</div> 
+  </div> 
 	<div id="MainWrapper">
   <div class="CreateEventMain">
     <div class="EventDetailMain">
       <h2> Choose your friends for the event </h2>
       <div class="slider_main">
-        <ul id="mycarousel" class="jcarousel-skin-ie7">
-          <li>
-            <div class="main_inner_slide"><a href="javascript:;" title="image"><img src="img/SliderImg2.png"   alt="image" />
-              <p class="slider_text">hello</p>
-              </a></div>
+        <ul style="padding:2%;">
+          <li ng-repeat="people in eventpeople">
+            <div class="main_inner_slide"><a href="javascript:;" title="image">
+              <img ng-click="showprofile(people.user_id)" src="https://graph.facebook.com/{{people.user_media_id}}/picture?width=300&height=300" alt="image" />
+              <p class="slider_text" style="text-align:center;">Select</p>
+            </div>
           </li>
-          <li>
-            <div class="main_inner_slide"> <a href="javascript:;" title="image"><img src="img/SliderImg2.png"   alt="image" />
-              <p class="slider_text">hello</p>
-              </a></div>
-          </li>
-          <li>
-            <div class="main_inner_slide"> <a href="javascript:;" title="image"><img src="img/SliderImg2.png"  alt="image" />
-              <p class="slider_text">hello</p>
-              </a></div>
-          </li>
-          <li>
-            <div class="main_inner_slide"> <a href="javascript:;" title="image"><img src="img/SliderImg2.png"  alt="image" />
-              <p class="slider_text">hello</p>
-              </a></div>
-          </li>
+          
         </ul>
       </div>
     </div>
@@ -48,6 +35,7 @@
       <div class="MessagePartner">
         <textarea id="Message" class="Message"></textarea>
       </div>
+      <h2 ng-click="sendmessage()" style="text-align:right;padding-right:10%; padding-top:2%;"> Send </h2>
     </div>
     <div class="clear"></div>
     <hr />

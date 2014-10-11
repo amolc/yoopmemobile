@@ -5,7 +5,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
   //OpenFB.init('1436843073264106','https://www.facebook.com/connect/login_success.html' ,$window.localStorage);
   
   OpenFB.init('102081083230772','http://node.fountaintechies.com:4000/mobile/oauthcallback.html' ,$window.localStorage);
-  
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -129,6 +129,16 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
       }
     })
 
+    .state('tab.profileevent', {
+      url: '/profileevent/:id',
+      views: {
+        'tab-events': {
+          templateUrl: 'templates/userevent-detail.html',
+          controller: 'UserEventProfileCtrl'
+        }
+      }
+    })
+
     .state('tab.eventdetail', {
       url: '/eventdetail/:id',
       views: {
@@ -148,16 +158,16 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
           controller: 'EventsCtrl'
         }
       }
-    })
-    .state('tab.eventdetails', {
-      url: '/eventdetails',
-      views: {
-        'tab-eventdetails': {
-          templateUrl: 'templates/tab-event-details.html',
-          //controller: 'AccountCtrl'
-        }
-      }
     });
+    // .state('tab.eventdetails', {
+    //   url: '/eventdetails',
+    //   views: {
+    //     'tab-eventdetails': {
+    //       templateUrl: 'templates/tab-event-details.html',
+    //       controller: 'AccountCtrl'
+    //     }
+    //   }
+    // });
     
  // $urlRouterProvider.when('/eventpreferences', {templateUrl: 'templates/tab-eventpreferences.html'});
   // if none of the above states are matched, use this as the fallback
