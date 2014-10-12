@@ -611,6 +611,7 @@ angular.module('starter.controllers', [])
       {
         var data = {
           "event_id" : $stateParams.id,
+          "user_id" : uid,
           "status_val":status,
           "select_status":select_status
         };
