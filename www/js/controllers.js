@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
         
            
        $scope.setting = res.data;
-       if($scope.setting.user_agegroup){
+      
        var str = $scope.setting.user_agegroup;
        var res = str.split("_");
        $scope.position = {
@@ -39,7 +39,6 @@ angular.module('starter.controllers', [])
 
         showGenderpref(1);
       
-      } // $scope.setting.user_agegroup check
 
       }).error(function(error) {
         
@@ -428,7 +427,7 @@ angular.module('starter.controllers', [])
       $scope.eventdata = function(val){
 
         console.log(val);
-        alert(val);
+        //alert(val);
        
         if(val == 'nearby'){
                   $("#myevents").hide();
@@ -447,7 +446,7 @@ angular.module('starter.controllers', [])
                       "user_id" : $rootScope.id
                     };
 
-                    alert('send request');
+                    //alert('send request');
 
                   $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
                   $http.post(baseUrl+"api/myevents", data).success(function(res) {
@@ -455,7 +454,7 @@ angular.module('starter.controllers', [])
                     $scope.myevents = res;
 
                     console.log(res);
-                    alert(res.length);
+                    //alert(res.length);
 
                   }).error(function(error) {
                     
