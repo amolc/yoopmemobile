@@ -622,16 +622,29 @@ angular.module('starter.controllers', [])
           alert(res.massage);
           console.log(res);
           select_status = parseInt(select_status);
-          if(select_status == 0)
+
+          var searchVal = uid;
+          var searchField = "user_id";
+          for (var i=0 ; i < obj.length ; i++)
           {
-            $("."+uid+"unsel").hide();
-            $("."+uid+"sel").show();
+              if(obj[i][searchField] == searchVal)
+                {
+                  
+                  $scope.eventpeople[i].select_status = select_status;
+                  break;
+                }
           }
-           else
-               {
-                $("."+uid+"sel").hide();
-                $("."+uid+"unsel").show();
-               }
+
+          // if(select_status == 0)
+          // {
+          //   $("."+uid+"unsel").hide();
+          //   $("."+uid+"sel").show();
+          // }
+          //  else
+          //      {
+          //       $("."+uid+"sel").hide();
+          //       $("."+uid+"unsel").show();
+          //      }
 
         }).error(function(error) {
           
