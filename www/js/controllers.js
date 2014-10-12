@@ -118,12 +118,12 @@ angular.module('starter.controllers', [])
 
     $scope.fblogin = function(user){
       
-      alert("success") ;
+      //alert("success") ;
    	  
       $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
       $http.post(baseUrl+"api/newfbuser", user).success(function(res) {
           	$rootScope.id = res.data.id;
-          	 alert($rootScope.id) ;
+          	 //alert($rootScope.id) ;
 	        $location.path("/tab/profile/"+$rootScope.id);
       }).error(function(error) {
       	     alert(error);
