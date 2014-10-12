@@ -623,13 +623,13 @@ angular.module('starter.controllers', [])
           select_status = parseInt(select_status);
           if(select_status == 0)
           {
-            $("#"+uid+"unsel").hide();
-            $("#"+uid+"sel").hide();
+            $("."+uid+"unsel").hide();
+            $("."+uid+"sel").hide();
           }
            else
                {
-                $("#"+uid+"sel").hide();
-                $("#"+uid+"unsel").hide();
+                $("."+uid+"sel").hide();
+                $("."+uid+"unsel").hide();
                }
 
         }).error(function(error) {
