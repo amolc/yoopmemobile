@@ -658,3 +658,12 @@ background: #ccc !important;
     width: 100%;
     height: 100%;
 }
+
+.main_inner_slide img.resimg{
+    border: 5px solid red !important;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
