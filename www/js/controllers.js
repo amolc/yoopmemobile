@@ -599,6 +599,7 @@ angular.module('starter.controllers', [])
       $http.post(baseUrl+"api/eventpeople", data).success(function(res) {
         
         $scope.eventpeople = res;
+        console.log(res);
 
       }).error(function(error) {
         
