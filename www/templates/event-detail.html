@@ -21,8 +21,8 @@
           <li ng-repeat="people in eventpeople">
             <div class="main_inner_slide"><a href="javascript:;" title="image">
               <img ng-click="showprofile(people.id)" src="https://graph.facebook.com/{{people.user_media_id}}/picture?width=300&height=300" alt="image" />
-              <p class="slider_text" style="text-align:center;" ng-show="people.select_status=='0'">Select</p>
-              <p class="slider_text" style="text-align:center;" ng-show="people.select_status=='1'">Cancel</p>
+              <p class="slider_text {{people.id}}sel" ng-click="selectunselect(people.id,1,1)" style="text-align:center;" ng-show="people.select_status=='0'">Select</p>
+              <p class="slider_text {{people.id}}unsel" ng-click="selectunselect(people.id,0,0)" style="text-align:center; color:red;" ng-show="people.select_status=='1'">Cancel</p>
             </div>
           </li>
           

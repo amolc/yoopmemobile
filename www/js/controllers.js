@@ -607,6 +607,38 @@ angular.module('starter.controllers', [])
 
       });
 
+      $scope.selectunselect = function(uid,status,select_status)
+      {
+        var data = {
+          "event_id" : $stateParams.id,
+          "status_val":status,
+          "select_status":select_status
+        };
+
+        $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+        $http.post(baseUrl+"api/selectunselect", data).success(function(res) {
+          
+          alert(res.message);
+          console.log(res);
+          select_status = parseInt(select_status);
+          if(select_status == 0)
+          {
+            $("#"+uid+"unsel").hide();
+            $("#"+uid+"sel").hide();
+          }
+           else
+               {
+                $("#"+uid+"sel").hide();
+                $("#"+uid+"unsel").hide();
+               }
+
+        }).error(function(error) {
+          
+          console.log(error);
+
+        });
+      };
+
       $scope.showprofile = function(userid)
       {
           $location.path("/tab/profileevent/"+userid);
