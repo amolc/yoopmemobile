@@ -618,7 +618,7 @@ angular.module('starter.controllers', [])
         $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
         $http.post(baseUrl+"api/selectunselect", data).success(function(res) {
           
-          alert(res.message);
+          alert(res.massage);
           console.log(res);
           select_status = parseInt(select_status);
           if(select_status == 0)
