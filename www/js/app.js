@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.services','openfb'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.services','openfb'])
 
 .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
  
