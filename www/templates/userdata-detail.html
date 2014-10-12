@@ -40,7 +40,7 @@
 
             <h4 id="user_description_text" class="edittext" id="user_name_text"><input ng-blur="updatedata('user_description')" type="text" ng-model="profile.user_description"></h4>
     			  <br/>
-    		  <span class="pull-right">{{profile.user_age}}</span>
+    		  <!-- <span class="pull-right">{{profile.user_age}}</span> -->
     		</div>  
       </div>  
 	</div>
@@ -76,7 +76,7 @@
     </div>
   
   <div class="row btnssocial" id="psocial">
-    <div id="linkd" class="col first"><a target="_blank" href="//{{profile.user_linkin_url}}"></a></div>
+    <div id="linkd" class="col first"><a target="_blank" href="{{profile.user_linkin_url}}"></a></div>
 
     <div id="fb" class="col second"><a target="_blank" href="{{profile.user_fb_url}}" id="facebook" ></a></div>
     <div id="twt" class="col third"><a target="_blank" href="{{profile.user_twt_url}}" id="twitter" ></a></div> 
