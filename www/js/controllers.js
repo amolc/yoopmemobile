@@ -624,7 +624,7 @@ angular.module('starter.controllers', [])
           select_status = parseInt(select_status);
 
           var searchVal = uid;
-          var searchField = "user_id";
+          var searchField = "id";
           var obj = $scope.eventpeople;
           for (var i=0 ; i < obj.length ; i++)
           {
