@@ -475,6 +475,7 @@ angular.module('starter.controllers', [])
       $http.post(baseUrl+"api/allevents", data).success(function(res) {
         
         $scope.events = res;
+        console.log(res);
 
         $("#myevents").hide();
 
