@@ -18,16 +18,16 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     }
   });
 
-        $rootScope.$on('$stateChangeStart', function(event, toState) {
-             if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
-                $state.go('app.login');
-                 event.preventDefault();
-             }
-         });
+        // $rootScope.$on('$stateChangeStart', function(event, toState) {
+        //      if (toState.name !== "app.login" && toState.name !== "app.logout" && !$window.sessionStorage['fbtoken']) {
+        //         $state.go('app.login');
+        //          event.preventDefault();
+        //      }
+        //  });
 
-         $rootScope.$on('OAuthException', function() {
-             $state.go('app.login');
-         });
+        //  $rootScope.$on('OAuthException', function() {
+        //      $state.go('app.login');
+        //  });
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
