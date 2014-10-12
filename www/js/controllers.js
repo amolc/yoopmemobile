@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
   
 	
   var user = { };
-
+  $scope.setting.user_agegroup = '';
   $rootScope.id =$rootScope.id;
   
   $http.get(baseUrl+"api/userdetail/"+$rootScope.id, user).success(function(res) {
