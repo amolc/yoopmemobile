@@ -424,6 +424,9 @@ angular.module('starter.controllers', [])
       };
 
       $scope.eventdata = function(val){
+
+        console.log(val);
+        alert(val);
        
         if(val == 'nearby'){
                   $("#myevents").hide();
@@ -442,10 +445,15 @@ angular.module('starter.controllers', [])
                       "user_id" : $rootScope.id
                     };
 
+                    alert('send request');
+
                   $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
                   $http.post(baseUrl+"api/myevents", data).success(function(res) {
                     
                     $scope.myevents = res;
+
+                    console.log(res);
+                    alert(res.length);
 
                   }).error(function(error) {
                     
