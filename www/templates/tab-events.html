@@ -41,7 +41,12 @@
      <a ng-repeat="eventer in events" class="item item-avatar" href="javascript:;">
         <img ng-click="showprofile(eventer.user_id)" ng-src="https://graph.facebook.com/{{eventer.user_media_id}}/picture?width=300&height=300" alt="" src="https://graph.facebook.com/{{eventer.user_media_id}}/picture?width=300&height=300">
         <h2 style="">{{eventer.event_invite}} with {{eventer.user_name}} <span style="margin-left:10px;">{{eventer.event_time}}</span></h2>
-        <p><span style="float:left;">0.7 KM</span> <span ng-click="joinevent(eventer.id)" style="float:right;">Join</span></p>
+        <p><span style="float:left;">0.7 KM</span> 
+
+          <span ng-click="joinevent(eventer.id)" ng-show="eventer.select_status == '0'" style="float:right;">Join</span>
+
+          <span style="float:right;color:green;" ng-show="eventer.select_status == '1'">Accepted</span>
+      </p>
       </a>
   
   </div>
