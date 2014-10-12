@@ -624,12 +624,12 @@ angular.module('starter.controllers', [])
           if(select_status == 0)
           {
             $("."+uid+"unsel").hide();
-            $("."+uid+"sel").hide();
+            $("."+uid+"sel").show();
           }
            else
                {
                 $("."+uid+"sel").hide();
-                $("."+uid+"unsel").hide();
+                $("."+uid+"unsel").show();
                }
 
         }).error(function(error) {
