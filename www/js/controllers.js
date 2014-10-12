@@ -467,7 +467,7 @@ angular.module('starter.controllers', [])
       $scope.events = '';
       $scope.myevents = '';
       var data = {
-        "user_id" : 1
+        "user_id" : $rootScope.id
       };
 
 
