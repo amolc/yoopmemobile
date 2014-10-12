@@ -625,6 +625,7 @@ angular.module('starter.controllers', [])
 
           var searchVal = uid;
           var searchField = "user_id";
+          var obj = $scope.eventpeople;
           for (var i=0 ; i < obj.length ; i++)
           {
               if(obj[i][searchField] == searchVal)
