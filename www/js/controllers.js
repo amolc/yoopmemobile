@@ -20,7 +20,7 @@ angular.module('starter.controllers', [])
         
            
        $scope.setting = res.data;
-      
+       if($scope.setting.user_agegroup){
        var str = $scope.setting.user_agegroup;
        var res = str.split("_");
        $scope.position = {
@@ -39,6 +39,7 @@ angular.module('starter.controllers', [])
 
         showGenderpref(1);
       
+      } // $scope.setting.user_agegroup check
 
       }).error(function(error) {
         
