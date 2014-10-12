@@ -149,8 +149,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
       }
     })
 
-
-    .state('tab.events', {
+   .state('tab.events', {
       url: '/events',
       views: {
         'tab-events': {
@@ -188,6 +187,3 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
         }
     
 });
-
-
-

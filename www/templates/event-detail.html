@@ -20,7 +20,7 @@
         <ul style="padding:2%;">
           <li ng-repeat="people in eventpeople">
             <div class="main_inner_slide"><a href="javascript:;" title="image">
-              <img ng-click="showprofile(people.user_id)" src="https://graph.facebook.com/{{people.user_media_id}}/picture?width=300&height=300" alt="image" />
+              <img ng-click="showprofile(people.id)" src="https://graph.facebook.com/{{people.user_media_id}}/picture?width=300&height=300" alt="image" />
               <p class="slider_text" style="text-align:center;">Select</p>
             </div>
           </li>
