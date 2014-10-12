@@ -635,7 +635,7 @@ angular.module('starter.controllers', [])
                   break;
                 }
           }
-
+          console.log($scope.eventpeople);
           // if(select_status == 0)
           // {
           //   $("."+uid+"unsel").hide();
