@@ -675,7 +675,7 @@ angular.module('starter.controllers', [])
                   $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
                   $http.post(baseUrl+"api/sendmessages", data).success(function(res) {
                     
-                    alert('message sent successfully');
+                    //alert('message sent successfully');
 
                   }).error(function(error) {
                     

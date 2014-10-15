@@ -1,6 +1,13 @@
 angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.services','openfb'])
 
 .run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+
+  $rootScope.template = {url: "templates/email.html"};
+
+  $rootScope.gotoinbox = function()
+  {
+    $location.path("/tab/messages");
+  };
  
   //OpenFB.init('1436843073264106','https://www.facebook.com/connect/login_success.html' ,$window.localStorage);
   
@@ -115,6 +122,16 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
         'tab-profile': {
           templateUrl: 'templates/user-detail.html',
           controller: 'UserProfileCtrl'
+        }
+      }
+    })
+
+    .state('tab.messaages', {
+      url: '/messages',
+      views: {
+        'tab-profile': {
+          templateUrl: 'templates/messages-detail.html',
+          controller: 'EventMessagesCtrl'
         }
       }
     })
