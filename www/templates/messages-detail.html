@@ -1,4 +1,4 @@
-<ion-view title="Events" ng-controller="EventsCtrl">
+<ion-view title="Event Messages">
     <ng-include src="template.url"> </ng-include>
   <ion-content class="">
     <div id="profile-wrapper" >
@@ -22,7 +22,7 @@
       
      <a ng-repeat="msg in messages" class="item item-avatar" href="javascript:;">
             <img ng-click="showprofile(msg.sender_id)" ng-src="https://graph.facebook.com/{{msg.user_media_id}}/picture?width=300&height=300" alt="" src="https://graph.facebook.com/{{msg.user_media_id}}/picture?width=300&height=300">
-        <h2 style="">{{msg.user_name}} sent you {{msg.event_invite}} <span style="margin-left:10px;"></span></h2>
+        <h2 style="">{{msg.user_name}} sent you message for {{msg.event_invite}} <span style="margin-left:10px;"></span></h2>
         <p><!-- <span style="float:left;">0.7 KM</span> --> 
 
           
