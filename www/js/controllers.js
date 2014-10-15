@@ -697,6 +697,8 @@ angular.module('starter.controllers', [])
   $http.post(baseUrl+"api/allusermessages/", data).success(function(res) {
       
       $scope.messages = res;
+
+      console.log(res);
       
 
       }).error(function(error) {
