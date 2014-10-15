@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.services','openfb'])
 
-.run(function($rootScope, $state, $ionicPlatform, $window, OpenFB) {
+.run(function($rootScope, $state, $ionicPlatform, $window, OpenFB,$location) {
 
   $rootScope.template = {url: "templates/email.html"};
 
