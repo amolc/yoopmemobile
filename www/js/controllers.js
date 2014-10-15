@@ -686,4 +686,23 @@ angular.module('starter.controllers', [])
           }
       };
 
+})
+.controller('EventMessagesCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
+  
+  var data = {
+        "user_id" : $rootScope.id
+      };
+  
+  $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+  $http.post(baseUrl+"api/allusermessages/", data).success(function(res) {
+      
+      $scope.messages = res;
+      
+
+      }).error(function(error) {
+        
+        console.log(error);
+
+      });
+
 });

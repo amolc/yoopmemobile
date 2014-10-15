@@ -1,0 +1,43 @@
+<ion-view title="Events" ng-controller="EventsCtrl">
+    <ng-include src="template.url"> </ng-include>
+  <ion-content class="">
+    <div id="profile-wrapper" >
+        <div id="profile" class="row">
+      		<div>
+      			<img  class="imgprofile" ng-src="{{profileimage}}" alt="" src="{{profileimage}}">
+      		</div>
+    	  	<div class="col col-60">
+    		  	<h3  class="ng-binding">Event Messages</h3>    		  	
+    		  	<h4 class="ng-binding">Read messages sent by other users</h4>
+    			  <br/>
+    		</div>  
+      </div>  
+	</div> 
+<div class="clear"></div>
+
+
+	
+
+  <div class="list" >
+      
+     <a ng-repeat="msg in messages" class="item item-avatar" href="javascript:;">
+            <img ng-click="showprofile(msg.sender_id)" ng-src="https://graph.facebook.com/{{msg.user_media_id}}/picture?width=300&height=300" alt="" src="https://graph.facebook.com/{{msg.user_media_id}}/picture?width=300&height=300">
+        <h2 style="">{{msg.user_name}} sent you {{msg.event_invite}} <span style="margin-left:10px;"></span></h2>
+        <p><!-- <span style="float:left;">0.7 KM</span> --> 
+
+          
+
+          <span style="float:right;color:green;">Read Message</span>
+        
+         </p>
+    
+
+                
+
+
+      </a>
+  
+  </div>
+
+  </ion-content>
+</ion-view>
