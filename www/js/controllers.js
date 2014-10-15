@@ -637,16 +637,7 @@ angular.module('starter.controllers', [])
                 }
           }
           console.log($scope.eventpeople);
-          // if(select_status == 0)
-          // {
-          //   $("."+uid+"unsel").hide();
-          //   $("."+uid+"sel").show();
-          // }
-          //  else
-          //      {
-          //       $("."+uid+"sel").hide();
-          //       $("."+uid+"unsel").show();
-          //      }
+          
 
         }).error(function(error) {
           
@@ -662,7 +653,37 @@ angular.module('starter.controllers', [])
       };
 
       $scope.sendmessage = function(){
-          alert('Message Sent');
+
+        var obj = $scope.eventpeople;
+
+         for (var i=0 ; i < obj.length ; i++)
+          {
+              
+              var select_status = obj[i]['select_status'];
+
+              if(select_status == '1'){
+
+                var user_id = obj[i]['id'];
+                var message = {
+                   "event_id" : $stateParams.id,
+                   "user_id" : user_id,
+                   "message" : $("#Message").val()
+                };
+
+                var data = message;
+               
+                  $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
+                  $http.post(baseUrl+"api/sendmessages", data).success(function(res) {
+                    
+                    alert('message sent successfully');
+
+                  }).error(function(error) {
+                    
+                    console.log(error);
+
+                  });
+              }
+          }
       };
 
 });
