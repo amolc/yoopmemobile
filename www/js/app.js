@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
     .state('landing', {
       url: '/',
       templateUrl: 'templates/tab-home.html',
-      controller: 'DashCtrl'      
+      controller: 'HomeCtrl'      
     })
     .state('signup', {
       url: "/signup",

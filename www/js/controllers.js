@@ -8,6 +8,42 @@ if (document.location.hostname == "localhost"){
  
 angular.module('starter.controllers', [])
 
+.controller('HomeCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB,$cordovaPush) {
+    
+    $rootScope.token = '';
+    var iosConfig = {
+        "badge":"true",
+        "sound":"true",
+        "alert":"true",
+        "ecb":"onNotificationAPN"
+      };
+
+      $cordovaPush.register(iosConfig).then(function(result) {
+          // Success! 
+          alert( result ) ;
+          console.log( result );
+          $rootScope.token = result;
+      }, function(err) {
+         alert(err);
+      });
+
+
+      $cordovaPush.unregister(options).then(function(result) {
+          // Success! 
+      }, function(err) {
+          // An error occured. Show a message to the user
+      });
+
+      // iOS only
+      $cordovaPush.setBadgeNumber(2).then(function(result) {
+          // Success! 
+      }, function(err) {
+          alert(err);
+      });  
+
+
+})
+
 .controller('DashCtrl', function($stateParams,$rootScope,$scope, $location, $http,OpenFB) {
   
 	
@@ -90,37 +126,8 @@ angular.module('starter.controllers', [])
   $scope.currencyFormatting = function(value) { return value.toString(); };
 })
 
-.controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB,$cordovaPush) {
+.controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
 
-
-  var iosConfig = {
-      "badge":"true",
-      "sound":"true",
-      "alert":"true",
-      "ecb":"onNotificationAPN"
-    };
-
-    $cordovaPush.register(iosConfig).then(function(result) {
-        // Success! 
-        alert( result ) ;
-        console.log( result );
-    }, function(err) {
-       alert(err);
-    });
-
-
-    $cordovaPush.unregister(options).then(function(result) {
-        // Success! 
-    }, function(err) {
-        // An error occured. Show a message to the user
-    });
-
-    // iOS only
-    $cordovaPush.setBadgeNumber(2).then(function(result) {
-        // Success! 
-    }, function(err) {
-        alert(err);
-    });  
 
  $rootScope.profileimage = '';
 	$scope.facebookLogin = function () {
@@ -150,6 +157,7 @@ angular.module('starter.controllers', [])
     $scope.fblogin = function(user){
       
       //alert("success") ;
+      user.user_token = $rootScope.token;
    	  
       $http.defaults.headers.post['Content-Type']='application/json; charset=UTF-8';
       $http.post(baseUrl+"api/newfbuser", user).success(function(res) {
