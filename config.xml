@@ -20,6 +20,10 @@
 
   <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />
 
+  <feature name="PushPlugin">
+    <param name="ios-package" value="PushPlugin" />
+  </feature>
+
   <icon src="icon.png" />
   
   <platform name="android">
