@@ -90,7 +90,38 @@ angular.module('starter.controllers', [])
   $scope.currencyFormatting = function(value) { return value.toString(); };
 })
 
-.controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB) {
+.controller('LoginCtrl', function($rootScope,$scope, $location, $http,OpenFB,$cordovaPush) {
+
+
+  var iosConfig = {
+      "badge":"true",
+      "sound":"true",
+      "alert":"true",
+      "ecb":"onNotificationAPN"
+    };
+
+    $cordovaPush.register(iosConfig).then(function(result) {
+        // Success! 
+        alert( result ) ;
+        console.log( result );
+    }, function(err) {
+        // An error occured. Show a message to the user
+    });
+
+
+    $cordovaPush.unregister(options).then(function(result) {
+        // Success! 
+    }, function(err) {
+        // An error occured. Show a message to the user
+    });
+
+    // iOS only
+    $cordovaPush.setBadgeNumber(2).then(function(result) {
+        // Success! 
+    }, function(err) {
+        // An error occured. Show a message to the user
+    });  
+
  $rootScope.profileimage = '';
 	$scope.facebookLogin = function () {
 
@@ -103,7 +134,7 @@ angular.module('starter.controllers', [])
                 });
         };
 
-
+    
     $scope.getfblogin = function(){
     
       OpenFB.get('/me').success(function (user) {
