@@ -105,7 +105,7 @@ angular.module('starter.controllers', [])
         alert( result ) ;
         console.log( result );
     }, function(err) {
-        // An error occured. Show a message to the user
+       alert(err);
     });
 
 
@@ -119,7 +119,7 @@ angular.module('starter.controllers', [])
     $cordovaPush.setBadgeNumber(2).then(function(result) {
         // Success! 
     }, function(err) {
-        // An error occured. Show a message to the user
+        alert(err);
     });  
 
  $rootScope.profileimage = '';
