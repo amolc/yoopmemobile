@@ -17,6 +17,14 @@
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
 
+  <feature name="PushPlugin">
+    <param name="ios-package" value="PushPlugin" />
+  </feature>
+
+  <feature name="PushPlugin">
+    <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+  </feature>
+
   <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
   <plugin name="Geolocation" value="org.apache.cordova.GeoBroker" />

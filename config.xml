@@ -24,6 +24,10 @@
     <param name="ios-package" value="PushPlugin" />
   </feature>
 
+  <feature name="PushPlugin">
+  <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+</feature>
+
   <icon src="icon.png" />
   
   <platform name="android">
