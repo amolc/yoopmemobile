@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.services','openfb','ngCordova'])
 
-.run(function($rootScope, $state, $ionicPlatform, $window, OpenFB,$location) {
+.run(function($rootScope, $state, $ionicPlatform, $window, OpenFB,$location,$cordovaPush) {
 
   $rootScope.template = {url: "templates/email.html"};
 
@@ -35,6 +35,54 @@ angular.module('starter', ['ionic', 'starter.controllers','uiSlider', 'starter.s
         //  $rootScope.$on('OAuthException', function() {
         //      $state.go('app.login');
         //  });
+   $rootScope.token = '1';
+
+    var androidConfig = {
+    "senderID":"240462080413",
+    "ecb":"onNotification"
+  };
+
+    var iosConfig = {
+        "badge":"true",
+        "sound":"true",
+        "alert":"true",
+        "ecb":"onNotificationAPN"
+      };
+
+
+
+      $cordovaPush.register(iosConfig).then(function(result) {
+          // Success! 
+          alert( result ) ;
+          console.log( result );
+          $rootScope.token = result;
+      }, function(err) {
+         alert(err);
+      });
+
+      $cordovaPush.register(androidConfig).then(function(result) {
+          // Success! 
+          alert( result ) ;
+          console.log( result );
+          $rootScope.token = result;
+      }, function(err) {
+         alert(err);
+      });
+
+
+      $cordovaPush.unregister(options).then(function(result) {
+          // Success! 
+      }, function(err) {
+          // An error occured. Show a message to the user
+      });
+
+      // iOS only
+      $cordovaPush.setBadgeNumber(2).then(function(result) {
+          // Success! 
+      }, function(err) {
+          alert(err);
+      });  
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
